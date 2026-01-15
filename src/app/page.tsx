@@ -1,64 +1,145 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div id="top" className="min-h-screen bg-white text-zinc-900">
+      <Navbar />
+      <main className="px-6">
+        <section className="mx-auto flex w-full max-w-6xl flex-col items-start pb-28 pl-2 pt-20 text-left sm:pl-4 sm:pt-28">
+          <h1 className="text-5xl font-semibold leading-tight tracking-tight text-zinc-900 sm:text-7xl">
+            Learn Smart,
+            <br />
+            Remember Forever
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <div className="mt-6 h-1.5 w-48 rounded-full bg-[#DDBDFD] sm:w-64" />
+          <p className="mt-7 max-w-2xl text-xl text-zinc-600 sm:text-2xl">
+            Turn any content into smart flashcards, get instant AI feedback, and
+            study the Panda way with a calm, focused loop of practice and
+            review.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#auth"
+            className="mt-12 rounded-full bg-[#DDBDFD] px-10 py-3.5 text-lg font-semibold text-zinc-900 shadow-sm transition hover:shadow-md"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            Sign in to start
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
+
+        <section
+          id="features"
+          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
+        >
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-3xl border border-zinc-100 bg-zinc-50 p-7">
+              <h2 className="text-xl font-semibold">Smart flashcards</h2>
+              <p className="mt-3 text-base text-zinc-600">
+                Generate active recall cards from any document and review them
+                with spaced repetition hints.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-zinc-100 bg-zinc-50 p-7">
+              <h2 className="text-xl font-semibold">Adaptive quizzes</h2>
+              <p className="mt-3 text-base text-zinc-600">
+                Practice with instant feedback and explanations that adjust to
+                your current level.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-zinc-100 bg-zinc-50 p-7">
+              <h2 className="text-xl font-semibold">Focused exam mode</h2>
+              <p className="mt-3 text-base text-zinc-600">
+                Simulate tests, track mastery by topic, and see what to review
+                next.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="tutoring"
+          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
+        >
+          <div className="grid gap-6 md:grid-cols-[1.2fr_1fr] md:items-center">
+            <div>
+              <h2 className="text-3xl font-semibold">AI tutoring that guides</h2>
+              <p className="mt-4 text-base text-zinc-600 sm:text-lg">
+                Panda Coach starts with hints, then asks targeted follow-up
+                questions to unlock understanding without giving away the
+                answer.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-zinc-100 bg-white p-7 shadow-sm">
+              <p className="text-base font-semibold text-zinc-900">
+                Hint-first support
+              </p>
+              <p className="mt-3 text-base text-zinc-600">
+                Get a guided path for each concept with short, focused prompts
+                that help you connect the dots.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="pricing"
+          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
+        >
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-3xl border border-zinc-100 bg-zinc-50 p-7">
+              <h2 className="text-xl font-semibold">Free trial loop</h2>
+              <p className="mt-3 text-base text-zinc-600">
+                Generate a limited set of flashcards, quizzes, and summaries to
+                experience the full study cycle.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-zinc-200 bg-white p-7 shadow-sm">
+              <h2 className="text-xl font-semibold">Premium expansion</h2>
+              <p className="mt-3 text-base text-zinc-600">
+                Unlock higher limits, advanced analytics, and more tutoring
+                sessions.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="about"
+          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
+        >
+          <div className="rounded-3xl border border-zinc-100 bg-white p-7 shadow-sm">
+            <h2 className="text-3xl font-semibold">About PandaAi</h2>
+            <p className="mt-4 text-base text-zinc-600 sm:text-lg">
+              PandaAi turns your own materials into a structured study loop of
+              practice, feedback, and review with a calm, minimal interface.
+            </p>
+          </div>
+        </section>
+
+        <section
+          id="auth"
+          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
+        >
+          <div className="rounded-3xl border border-zinc-100 bg-zinc-50 p-8 text-center">
+            <h2 className="text-3xl font-semibold">Get started</h2>
+            <p className="mt-4 text-base text-zinc-600 sm:text-lg">
+              Authentication is not enabled yet. This demo focuses on the study
+              experience and content flow.
+            </p>
+            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <button
+                type="button"
+                className="rounded-full border border-zinc-200 px-7 py-3.5 text-base font-semibold text-zinc-900"
+              >
+                Login
+              </button>
+              <button
+                type="button"
+                className="rounded-full bg-[#DDBDFD] px-7 py-3.5 text-base font-semibold text-zinc-900 shadow-sm"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
