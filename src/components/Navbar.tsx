@@ -2,14 +2,44 @@
 
 import { useState } from "react";
 
-const navLinks = [
+type NavLink = {
+  label: string;
+  href: string;
+  hasChevron?: boolean;
+};
+
+type LanguageOption = {
+  label: string;
+  href: string;
+};
+
+type NavbarProps = {
+  navLinks?: NavLink[];
+  language?: {
+    label: string;
+    options: LanguageOption[];
+  };
+};
+
+const defaultNavLinks: NavLink[] = [
   { label: "Features", href: "#features", hasChevron: true },
   { label: "AI Tutoring", href: "#tutoring" },
   { label: "Pricing", href: "#pricing" },
   { label: "About us", href: "#about" },
 ];
 
-export default function Navbar() {
+const defaultLanguage = {
+  label: "Language",
+  options: [
+    { label: "Français", href: "/fr" },
+    { label: "English", href: "/" },
+  ],
+};
+
+export default function Navbar({
+  navLinks = defaultNavLinks,
+  language = defaultLanguage,
+}: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -55,7 +85,7 @@ export default function Navbar() {
               className="inline-flex items-center gap-1 rounded-full px-4 py-2 transition hover:bg-zinc-200 hover:text-zinc-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300"
               aria-haspopup="true"
             >
-              Language
+              {language.label}
               <svg
                 aria-hidden="true"
                 viewBox="0 0 12 12"
@@ -72,18 +102,15 @@ export default function Navbar() {
               </svg>
             </button>
             <div className="invisible absolute left-1/2 top-full z-10 mt-2 w-36 -translate-x-1/2 rounded-2xl border border-zinc-200 bg-white p-2 text-sm text-zinc-600 shadow-sm opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-              <a
-                href="#language-fr"
-                className="block rounded-xl px-3 py-2 transition hover:bg-zinc-100"
-              >
-                Français
-              </a>
-              <a
-                href="#language-en"
-                className="block rounded-xl px-3 py-2 transition hover:bg-zinc-100"
-              >
-                English
-              </a>
+              {language.options.map((option) => (
+                <a
+                  key={option.href}
+                  href={option.href}
+                  className="block rounded-xl px-3 py-2 transition hover:bg-zinc-100"
+                >
+                  {option.label}
+                </a>
+              ))}
             </div>
           </div>
         </nav>
@@ -147,23 +174,19 @@ export default function Navbar() {
             ))}
             <div className="rounded-2xl border border-zinc-200 p-3">
               <p className="text-xs font-semibold uppercase tracking-wide text-zinc-400">
-                Language
+                {language.label}
               </p>
               <div className="mt-2 flex flex-col gap-1">
-                <a
-                  href="#language-fr"
-                  className="rounded-xl px-3 py-2 text-sm font-semibold text-zinc-600 transition hover:bg-zinc-100"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Français
-                </a>
-                <a
-                  href="#language-en"
-                  className="rounded-xl px-3 py-2 text-sm font-semibold text-zinc-600 transition hover:bg-zinc-100"
-                  onClick={() => setIsOpen(false)}
-                >
-                  English
-                </a>
+                {language.options.map((option) => (
+                  <a
+                    key={option.href}
+                    href={option.href}
+                    className="rounded-xl px-3 py-2 text-sm font-semibold text-zinc-600 transition hover:bg-zinc-100"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {option.label}
+                  </a>
+                ))}
               </div>
             </div>
             <div className="flex items-center gap-3 pt-2">
