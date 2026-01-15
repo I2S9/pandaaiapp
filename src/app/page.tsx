@@ -2,16 +2,19 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div id="top" className="min-h-screen bg-white text-zinc-900">
+    <div
+      id="top"
+      className="flex min-h-screen flex-col bg-white text-zinc-900"
+    >
       <Navbar />
-      <main className="px-6">
+      <main className="flex-1 px-6">
         <section className="mx-auto flex w-full max-w-6xl flex-col items-start pb-28 pl-2 pt-20 text-left sm:pl-4 sm:pt-28">
           <div className="inline-flex flex-col items-start">
             <h1 className="text-5xl font-semibold leading-tight tracking-tight text-zinc-900 sm:text-7xl">
               Learn Smart,
               <br />
               Remember Forever
-            </h1>
+          </h1>
             <div className="mt-3 h-2.5 w-full bg-[#DDBDFD]" />
           </div>
           <p className="mt-7 max-w-2xl text-xl text-zinc-600 sm:text-2xl">
@@ -132,36 +135,59 @@ export default function Home() {
               PandaAi turns your own materials into a structured study loop of
               practice, feedback, and review with a calm, minimal interface.
             </p>
-          </div>
+        </div>
         </section>
 
-        <section
-          id="auth"
-          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
-        >
-          <div className="rounded-3xl border border-zinc-100 bg-zinc-50 p-8 text-center">
-            <h2 className="text-3xl font-semibold">Get started</h2>
-            <p className="mt-4 text-base text-zinc-600 sm:text-lg">
-              Authentication is not enabled yet. This demo focuses on the study
-              experience and content flow.
-            </p>
-            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <button
-                type="button"
-                className="rounded-full border border-zinc-200 px-7 py-3.5 text-base font-semibold text-zinc-900"
-              >
-                Login
-              </button>
-              <button
-                type="button"
-                className="rounded-full bg-[#DDBDFD] px-7 py-3.5 text-base font-semibold text-white shadow-sm"
-              >
-                Sign Up
-              </button>
+        
+      </main>
+      <footer className="w-full px-6 pb-6">
+        <div className="h-80 w-full rounded-[28px] bg-[#DDBDFD]">
+          <div className="mx-auto grid h-full w-full max-w-6xl items-start gap-8 px-8 py-12 sm:grid-cols-3">
+            <div>
+              <p className="text-xl font-semibold text-white">PandaAi</p>
+              <p className="mt-3 text-base text-white/90">
+                Temporary footer copy. Replace with company details and a short
+                product statement before launch.
+              </p>
+              <p className="mt-5 text-sm uppercase tracking-wide text-white/70">
+                © 2026 PandaAi. All rights reserved.
+              </p>
+            </div>
+            <div>
+              <p className="text-base font-semibold uppercase tracking-wide text-white/80">
+                Product
+              </p>
+              <div className="mt-4 flex flex-col gap-2 text-base text-white/90">
+                <a href="#features" className="transition hover:text-white">
+                  Features
+                </a>
+                <a href="#tutoring" className="transition hover:text-white">
+                  AI Tutoring
+                </a>
+                <a href="#pricing" className="transition hover:text-white">
+                  Pricing
+                </a>
+              </div>
+            </div>
+            <div>
+              <p className="text-base font-semibold uppercase tracking-wide text-white/80">
+                Company
+              </p>
+              <div className="mt-4 flex flex-col gap-2 text-base text-white/90">
+                <a href="#about" className="transition hover:text-white">
+                  About
+                </a>
+                <a href="#top" className="transition hover:text-white">
+                  Back to top
+                </a>
+                <a href="#top" className="transition hover:text-white">
+                  Contact
+                </a>
+              </div>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </footer>
     </div>
   );
 }
