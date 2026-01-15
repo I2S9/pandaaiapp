@@ -6,12 +6,14 @@ export default function Home() {
       <Navbar />
       <main className="px-6">
         <section className="mx-auto flex w-full max-w-6xl flex-col items-start pb-28 pl-2 pt-20 text-left sm:pl-4 sm:pt-28">
-          <h1 className="text-5xl font-semibold leading-tight tracking-tight text-zinc-900 sm:text-7xl">
-            Learn Smart,
-            <br />
-            Remember Forever
-          </h1>
-          <div className="mt-6 h-1.5 w-48 rounded-full bg-[#DDBDFD] sm:w-64" />
+          <div className="inline-flex flex-col items-start">
+            <h1 className="text-5xl font-semibold leading-tight tracking-tight text-zinc-900 sm:text-7xl">
+              Learn Smart,
+              <br />
+              Remember Forever
+            </h1>
+            <div className="mt-3 h-2.5 w-full bg-[#DDBDFD]" />
+          </div>
           <p className="mt-7 max-w-2xl text-xl text-zinc-600 sm:text-2xl">
             Turn any content into smart flashcards, get instant AI feedback, and
             study the Panda way with a calm, focused loop of practice and
@@ -19,9 +21,9 @@ export default function Home() {
           </p>
           <a
             href="#auth"
-            className="mt-12 rounded-full bg-[#DDBDFD] px-10 py-3.5 text-lg font-semibold text-white shadow-sm transition hover:shadow-md"
+            className="mt-8 inline-flex items-center justify-center rounded-2xl bg-[#DDBDFD] px-10 py-3.5 text-lg font-semibold text-white shadow-[0_6px_0_#A27BD8] transition-all hover:translate-y-0.5 hover:shadow-[0_4px_0_#A27BD8] active:translate-y-1 active:shadow-[0_2px_0_#A27BD8]"
           >
-            Sign in to start
+            Get Started Free
           </a>
         </section>
 

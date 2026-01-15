@@ -23,9 +23,9 @@ export default function Navbar() {
           <span className="text-xl font-semibold text-zinc-900">PandaAi</span>
         </a>
 
-        <nav className="hidden items-center gap-8 text-base font-semibold text-zinc-700 md:flex">
+        <nav className="hidden items-center gap-8 text-base font-semibold text-zinc-500 md:flex">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-zinc-900">
+            <a key={link.href} href={link.href} className="hover:text-zinc-700">
               {link.label}
             </a>
           ))}
@@ -61,12 +61,12 @@ export default function Navbar() {
 
       {isOpen ? (
         <div className="border-t border-zinc-100 bg-white md:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 text-base font-semibold text-zinc-700">
+          <nav className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 text-base font-semibold text-zinc-500">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="hover:text-zinc-900"
+                className="hover:text-zinc-700"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
