@@ -220,7 +220,7 @@ export default function HomeFr() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 border-t border-white/25 pt-6 text-center text-sm text-white/80">
+            <div className="mt-10 border-t border-white/25 pt-6 text-center text-base text-white/80">
               © 2026 PandaAi. Tous droits réservés.
             </div>
           </div>
