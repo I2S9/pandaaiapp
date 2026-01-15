@@ -19,7 +19,7 @@ export default function Home() {
           </p>
           <a
             href="#auth"
-            className="mt-12 rounded-full bg-[#DDBDFD] px-10 py-3.5 text-lg font-semibold text-zinc-900 shadow-sm transition hover:shadow-md"
+            className="mt-12 rounded-full bg-[#DDBDFD] px-10 py-3.5 text-lg font-semibold text-white shadow-sm transition hover:shadow-md"
           >
             Sign in to start
           </a>
@@ -133,7 +133,7 @@ export default function Home() {
               </button>
               <button
                 type="button"
-                className="rounded-full bg-[#DDBDFD] px-7 py-3.5 text-base font-semibold text-zinc-900 shadow-sm"
+                className="rounded-full bg-[#DDBDFD] px-7 py-3.5 text-base font-semibold text-white shadow-sm"
               >
                 Sign Up
               </button>
