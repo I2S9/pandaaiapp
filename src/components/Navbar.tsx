@@ -118,13 +118,13 @@ export default function Navbar({
         <div className="hidden items-center gap-3 md:flex">
           <a
             href="#auth"
-            className="rounded-full border border-zinc-200 px-5 py-2.5 text-base font-semibold text-zinc-900 hover:border-zinc-300"
+            className="rounded-2xl border border-zinc-200 px-5 py-2.5 text-base font-semibold text-zinc-900 hover:border-zinc-300"
           >
             Login
           </a>
           <a
             href="#auth"
-            className="rounded-full bg-[#DDBDFD] px-5 py-2.5 text-base font-semibold text-white shadow-sm"
+            className="rounded-2xl bg-[#DDBDFD] px-5 py-2.5 text-base font-semibold text-white shadow-sm"
           >
             Sign Up
           </a>
@@ -192,14 +192,14 @@ export default function Navbar({
             <div className="flex items-center gap-3 pt-2">
               <a
                 href="#auth"
-                className="rounded-full border border-zinc-200 px-5 py-2.5 text-base font-semibold text-zinc-900"
+                className="rounded-2xl border border-zinc-200 px-5 py-2.5 text-base font-semibold text-zinc-900"
                 onClick={() => setIsOpen(false)}
               >
                 Login
               </a>
               <a
                 href="#auth"
-                className="rounded-full bg-[#DDBDFD] px-5 py-2.5 text-base font-semibold text-white shadow-sm"
+                className="rounded-2xl bg-[#DDBDFD] px-5 py-2.5 text-base font-semibold text-white shadow-sm"
                 onClick={() => setIsOpen(false)}
               >
                 Sign Up

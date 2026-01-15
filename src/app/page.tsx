@@ -154,7 +154,7 @@ export default function Home() {
               <div className="flex w-full flex-col items-start lg:items-end">
                 <div className="flex w-full flex-col gap-8 sm:flex-row sm:justify-end">
                   <div className="lg:justify-self-start">
-                    <p className="text-base font-semibold uppercase tracking-wide text-white/80">
+                    <p className="text-base font-semibold tracking-wide text-white/80">
                       Product
                     </p>
                     <div className="mt-4 flex flex-col gap-2 text-base text-white/90">
@@ -170,7 +170,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="lg:justify-self-start">
-                    <p className="text-base font-semibold uppercase tracking-wide text-white/80">
+                    <p className="text-base font-semibold tracking-wide text-white/80">
                       Company
                     </p>
                     <div className="mt-4 flex flex-col gap-2 text-base text-white/90">
@@ -186,7 +186,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="lg:justify-self-start">
-                    <p className="text-base font-semibold uppercase tracking-wide text-white/80">
+                    <p className="text-base font-semibold tracking-wide text-white/80">
                       Legal
                     </p>
                     <div className="mt-4 flex flex-col gap-2 text-base text-white/90">
