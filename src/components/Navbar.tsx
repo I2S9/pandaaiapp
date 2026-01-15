@@ -3,10 +3,11 @@
 import { useState } from "react";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
+  { label: "Features", href: "#features", hasChevron: true },
   { label: "AI Tutoring", href: "#tutoring" },
   { label: "Pricing", href: "#pricing" },
   { label: "About us", href: "#about" },
+  { label: "Language", href: "#language", hasChevron: true },
 ];
 
 export default function Navbar() {
@@ -23,10 +24,30 @@ export default function Navbar() {
           <span className="text-xl font-semibold text-zinc-900">PandaAi</span>
         </a>
 
-        <nav className="hidden items-center gap-8 text-base font-semibold text-zinc-500 md:flex">
+        <nav className="hidden items-center gap-2 text-base font-semibold text-zinc-500 md:flex">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-zinc-700">
+            <a
+              key={link.href}
+              href={link.href}
+              className="inline-flex items-center gap-1 rounded-full px-4 py-2 transition hover:bg-zinc-200 hover:text-zinc-600"
+            >
               {link.label}
+              {link.hasChevron ? (
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 12 12"
+                  className="h-3 w-3"
+                  fill="none"
+                >
+                  <path
+                    d="M2.5 4.75 6 8.25l3.5-3.5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              ) : null}
             </a>
           ))}
         </nav>
@@ -61,15 +82,31 @@ export default function Navbar() {
 
       {isOpen ? (
         <div className="border-t border-zinc-100 bg-white md:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 text-base font-semibold text-zinc-500">
+          <nav className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-4 text-base font-semibold text-zinc-500">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="hover:text-zinc-700"
+                className="inline-flex items-center gap-1 rounded-full px-4 py-2 transition hover:bg-zinc-200 hover:text-zinc-600"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
+                {link.hasChevron ? (
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 12 12"
+                    className="h-3 w-3"
+                    fill="none"
+                  >
+                    <path
+                      d="M2.5 4.75 6 8.25l3.5-3.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                ) : null}
               </a>
             ))}
             <div className="flex items-center gap-3 pt-2">
