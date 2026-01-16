@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
@@ -316,13 +317,45 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="mx-auto w-full max-w-6xl border-t border-zinc-100 py-16">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <h2 className="text-3xl font-semibold text-zinc-900 sm:text-4xl">
+                500+ students already learning with PandaAi
+              </h2>
+              <p className="mt-3 max-w-xl text-base text-zinc-600">
+                Built from real study materials and trusted for calmer, faster
+                review.
+              </p>
+              <div className="mt-6">
+                <a
+                  href="#reviews"
+                  className="inline-flex items-center justify-center rounded-2xl bg-[#DDBDFD] px-10 py-3.5 text-lg font-semibold text-white shadow-[0_6px_0_#A27BD8] transition-all hover:translate-y-0.5 hover:shadow-[0_4px_0_#A27BD8] active:translate-y-1 active:shadow-[0_2px_0_#A27BD8]"
+                >
+                  Start learning smarter
+                </a>
+              </div>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <Image
+                src="/assets/images/map.png"
+                alt="Student locations map"
+                width={400}
+                height={400}
+                className="h-80 w-80 rounded-full object-cover sm:h-88 sm:w-88"
+                sizes="(min-width: 1024px) 352px, 320px"
+              />
+            </div>
+          </div>
+        </section>
+
         <section
           id="reviews"
           className="mx-auto w-full max-w-6xl border-t border-zinc-100 py-16"
         >
           <div className="text-center">
             <h2 className="text-3xl font-semibold text-zinc-900 sm:text-4xl">
-              Loved by +500 students
+              Loved by 500+ students
             </h2>
             <p className="mt-3 text-base text-zinc-600">
               Real study wins powered by focused practice and review.

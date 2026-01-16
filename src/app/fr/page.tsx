@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 
 const navLinks = [
@@ -334,13 +335,45 @@ export default function HomeFr() {
           </div>
         </section>
 
+        <section className="mx-auto w-full max-w-6xl border-t border-zinc-100 py-16">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <h2 className="text-3xl font-semibold text-zinc-900 sm:text-4xl">
+                500+ étudiants apprennent déjà avec PandaAi
+              </h2>
+              <p className="mt-3 max-w-xl text-base text-zinc-600">
+                Conçu à partir de vrais supports pour réviser plus vite et plus
+                sereinement.
+              </p>
+              <div className="mt-6">
+                <a
+                  href="#reviews"
+                  className="inline-flex items-center justify-center rounded-2xl bg-[#DDBDFD] px-10 py-3.5 text-lg font-semibold text-white shadow-[0_6px_0_#A27BD8] transition-all hover:translate-y-0.5 hover:shadow-[0_4px_0_#A27BD8] active:translate-y-1 active:shadow-[0_2px_0_#A27BD8]"
+                >
+                  Commencer à mieux apprendre
+                </a>
+              </div>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <Image
+                src="/assets/images/map.png"
+                alt="Carte des apprenants"
+                width={400}
+                height={400}
+                className="h-80 w-80 rounded-full object-cover sm:h-88 sm:w-88"
+                sizes="(min-width: 1024px) 352px, 320px"
+              />
+            </div>
+          </div>
+        </section>
+
         <section
           id="reviews"
           className="mx-auto w-full max-w-6xl border-t border-zinc-100 py-16"
         >
           <div className="text-center">
             <h2 className="text-3xl font-semibold text-zinc-900 sm:text-4xl">
-              Adoré par +500 étudiants
+              Adoré par 500+ étudiants
             </h2>
             <p className="mt-3 text-base text-zinc-600">
               Des résultats concrets grâce à une pratique ciblée.
