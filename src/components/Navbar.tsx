@@ -36,10 +36,65 @@ const defaultLanguage = {
   ],
 };
 
+type FeatureItem = {
+  label: string;
+  href: string;
+  icon: "coach" | "cards" | "quiz" | "exam" | "lofi" | "notes";
+  description: string;
+};
+
 export default function Navbar({
   navLinks = defaultNavLinks,
   language = defaultLanguage,
 }: NavbarProps) {
+  const featureItems: FeatureItem[] = [
+    {
+      label: "Panda Coach",
+      href: "#tutoring",
+      icon: "coach",
+      description: "AI-powered study buddy",
+    },
+    {
+      label: "Spaced Repetition",
+      href: "#features",
+      icon: "lofi",
+      description: "Memorize smarter, not harder",
+    },
+    {
+      label: "Smart Notes",
+      href: "#features",
+      icon: "notes",
+      description: "Turn content into bite-sized notes",
+    },
+    {
+      label: "Flashcards",
+      href: "#features",
+      icon: "cards",
+      description: "Active recall with quick reviews",
+    },
+    {
+      label: "Quiz Generator",
+      href: "#features",
+      icon: "quiz",
+      description: "Auto-generate quizzes from docs",
+    },
+    {
+      label: "Exam Mode",
+      href: "#features",
+      icon: "exam",
+      description: "Practice exams under timed mode",
+    },
+  ];
+
+  const pastelClasses: Record<FeatureItem["icon"], string> = {
+    coach: "bg-[#E9E3FF]",
+    cards: "bg-[#DDEBFF]",
+    quiz: "bg-[#DFF6E4]",
+    exam: "bg-[#FFE8D4]",
+    lofi: "bg-[#F1E3FF]",
+    notes: "bg-[#FFE4F0]",
+  };
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -54,31 +109,80 @@ export default function Navbar({
         </a>
 
         <nav className="hidden items-center gap-2 text-base font-semibold text-zinc-500 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="inline-flex items-center gap-1 rounded-full px-4 py-2 transition hover:bg-zinc-200 hover:text-zinc-600"
-            >
-              {link.label}
-              {link.hasChevron ? (
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 12 12"
-                  className="h-3 w-3"
-                  fill="none"
+          {navLinks.map((link) =>
+            link.href === "#features" ? (
+              <div key={link.href} className="group relative">
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-1 rounded-full px-4 py-2 transition hover:bg-zinc-200 hover:text-zinc-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300"
+                  aria-haspopup="true"
                 >
-                  <path
-                    d="M2.5 4.75 6 8.25l3.5-3.5"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              ) : null}
-            </a>
-          ))}
+                  {link.label}
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 12 12"
+                    className="h-3 w-3 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                    fill="none"
+                  >
+                    <path
+                      d="M2.5 4.75 6 8.25l3.5-3.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div className="invisible absolute left-1/2 top-full z-10 mt-2 w-[440px] -translate-x-1/2 rounded-2xl border border-zinc-200 bg-white p-4 text-sm text-zinc-600 shadow-sm opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {featureItems.map((item) => (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        className="flex items-start gap-3 rounded-xl px-3 py-2 transition hover:bg-zinc-100"
+                      >
+                        <span
+                          className={`h-8 w-8 rounded-lg ${pastelClasses[item.icon]}`}
+                        />
+                        <span>
+                          <span className="block whitespace-nowrap text-sm font-semibold text-zinc-900">
+                            {item.label}
+                          </span>
+                          <span className="mt-1 block text-xs text-zinc-500">
+                            {item.description}
+                          </span>
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="inline-flex items-center gap-1 rounded-full px-4 py-2 transition hover:bg-zinc-200 hover:text-zinc-600"
+              >
+                {link.label}
+                {link.hasChevron ? (
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 12 12"
+                    className="h-3 w-3"
+                    fill="none"
+                  >
+                    <path
+                      d="M2.5 4.75 6 8.25l3.5-3.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                ) : null}
+              </a>
+            ),
+          )}
           <div className="group relative">
             <button
               type="button"
