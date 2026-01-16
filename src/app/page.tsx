@@ -162,26 +162,33 @@ export default function Home() {
     >
       <Navbar />
       <main className="flex-1 px-6">
-        <section className="mx-auto flex w-full max-w-6xl flex-col items-start pb-28 pl-2 pt-20 text-left sm:pl-4 sm:pt-28">
-          <div className="inline-flex flex-col items-start">
-            <h1 className="text-5xl font-semibold leading-tight tracking-tight text-zinc-900 sm:text-7xl">
-              Learn Smart,
-              <br />
-              Remember Forever
-          </h1>
-            <div className="mt-3 h-2.5 w-full bg-[#DDBDFD]" />
+        <section className="relative mx-auto w-full max-w-6xl pb-28 pt-20 sm:pt-28">
+          <div
+            className="pointer-events-none absolute right-0 top-1/2 hidden h-[360px] w-[360px] -translate-y-1/2 bg-contain bg-no-repeat lg:block"
+            style={{ backgroundImage: "url(/assets/images/panda-header.png)" }}
+            aria-hidden="true"
+          />
+          <div className="flex flex-col items-start pl-2 text-left sm:pl-4">
+            <div className="inline-flex flex-col items-start">
+              <h1 className="text-5xl font-semibold leading-tight tracking-tight text-zinc-900 sm:text-7xl">
+                Learn Smart,
+                <br />
+                Remember Forever
+              </h1>
+              <div className="mt-3 h-2.5 w-full bg-[#DDBDFD]" />
+            </div>
+            <p className="mt-7 max-w-2xl text-xl text-zinc-600 sm:text-2xl">
+              Turn any content into smart flashcards, get instant AI feedback,
+              and study the Panda way with a calm, focused loop of practice and
+              review.
+            </p>
+            <a
+              href="#auth"
+              className="mt-8 inline-flex items-center justify-center rounded-2xl bg-[#DDBDFD] px-10 py-3.5 text-lg font-semibold text-white shadow-[0_6px_0_#A27BD8] transition-all hover:translate-y-0.5 hover:shadow-[0_4px_0_#A27BD8] active:translate-y-1 active:shadow-[0_2px_0_#A27BD8]"
+            >
+              Get Started Free
+            </a>
           </div>
-          <p className="mt-7 max-w-2xl text-xl text-zinc-600 sm:text-2xl">
-            Turn any content into smart flashcards, get instant AI feedback, and
-            study the Panda way with a calm, focused loop of practice and
-            review.
-          </p>
-          <a
-            href="#auth"
-            className="mt-8 inline-flex items-center justify-center rounded-2xl bg-[#DDBDFD] px-10 py-3.5 text-lg font-semibold text-white shadow-[0_6px_0_#A27BD8] transition-all hover:translate-y-0.5 hover:shadow-[0_4px_0_#A27BD8] active:translate-y-1 active:shadow-[0_2px_0_#A27BD8]"
-          >
-            Get Started Free
-          </a>
         </section>
 
         <section
@@ -501,7 +508,16 @@ export default function Home() {
           <div className="mx-auto w-full max-w-6xl px-8 py-12">
             <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:items-end">
               <div className="lg:self-end">
-                <p className="text-xl font-semibold text-white">PandaAi</p>
+                <div className="flex items-center gap-1">
+                  <Image
+                    src="/assets/images/logo.png"
+                    alt="PandaAi logo"
+                    width={88}
+                    height={88}
+                    className="h-[88px] w-[88px] rounded-2xl object-cover"
+                  />
+                  <p className="text-xl font-semibold text-zinc-900">PandaAi</p>
+                </div>
                 <p className="mt-3 max-w-xl text-base leading-relaxed text-white/90">
                   Temporary footer copy. Replace with company details and a
                   short product statement before launch.

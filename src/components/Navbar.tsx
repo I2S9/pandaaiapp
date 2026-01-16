@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 type NavLink = {
@@ -108,10 +109,14 @@ export default function Navbar({
   return (
     <header className="w-full border-b border-zinc-100 bg-white/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
-        <a href={`${basePath}#top`} className="flex items-center gap-4">
-          <span
-            aria-hidden="true"
-            className="h-10 w-10 rounded-2xl bg-[#DDBDFD]"
+        <a href={`${basePath}#top`} className="flex items-center gap-0.5">
+          <Image
+            src="/assets/images/logo.png"
+            alt="PandaAi logo"
+            width={96}
+            height={96}
+            className="h-24 w-24 rounded-2xl object-cover"
+            priority
           />
           <span className="text-xl font-semibold text-zinc-900">PandaAi</span>
         </a>
