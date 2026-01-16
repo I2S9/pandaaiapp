@@ -32,45 +32,109 @@ export default function Home() {
 
         <section
           id="features"
-          className="mx-auto w-full max-w-6xl border-t border-zinc-100 py-14"
+          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-14"
         >
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-3xl border border-zinc-200 bg-white px-5 py-6 shadow-sm">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-500">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#7C86FF]" />
-                Trusted scale
+          <div className="flex flex-wrap justify-center gap-1.5">
+            <div className="w-full max-w-[200px] rounded-3xl border border-zinc-200 bg-white px-5 py-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-6 w-6 text-[#7C86FF]"
+                  fill="none"
+                >
+                  <path
+                    d="M4 15.5h3.5M4 19h7M4 12h6M4 8.5h9"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+                <h3 className="text-4xl font-semibold text-zinc-900">#1</h3>
               </div>
-              <h3 className="mt-4 text-2xl font-semibold text-zinc-900">#1</h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-500">
                 Choice of 400,000+ students and teachers from 180+ countries.
               </p>
             </div>
-            <div className="rounded-3xl border border-zinc-200 bg-white px-5 py-6 shadow-sm">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-500">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#7BC7A3]" />
-                Learner preference
+            <div className="w-full max-w-[200px] rounded-3xl border border-zinc-200 bg-white px-5 py-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-6 w-6 text-[#7BC7A3]"
+                  fill="none"
+                >
+                  <path
+                    d="M4 12h5.5M4 7.5h9M4 16.5h8.5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <circle
+                    cx="18"
+                    cy="12"
+                    r="3.5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                </svg>
+                <h3 className="text-4xl font-semibold text-zinc-900">86%</h3>
               </div>
-              <h3 className="mt-4 text-2xl font-semibold text-zinc-900">86%</h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-500">
                 Prefer PandaAi over other resources according to surveys.
               </p>
             </div>
-            <div className="rounded-3xl border border-zinc-200 bg-white px-5 py-6 shadow-sm">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-500">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#BBA7FF]" />
-                Stress reduction
+            <div className="w-full max-w-[200px] rounded-3xl border border-zinc-200 bg-white px-5 py-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-6 w-6 text-[#BBA7FF]"
+                  fill="none"
+                >
+                  <path
+                    d="M6 9c2 2 4 3 6 3s4-1 6-3"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M8 16c2 1.5 6 1.5 8 0"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+                <h3 className="text-4xl font-semibold text-zinc-900">92%</h3>
               </div>
-              <h3 className="mt-4 text-2xl font-semibold text-zinc-900">92%</h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-500">
                 Experience less exam stress with complete preparation.
               </p>
             </div>
-            <div className="rounded-3xl border border-zinc-200 bg-white px-5 py-6 shadow-sm">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-500">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#FFB86B]" />
-                Student satisfaction
+            <div className="w-full max-w-[200px] rounded-3xl border border-zinc-200 bg-white px-5 py-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-6 w-6 text-[#FFB86B]"
+                  fill="none"
+                >
+                  <path
+                    d="M12 4v4M12 16v4M4 12h4M16 12h4"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                </svg>
+                <h3 className="text-4xl font-semibold text-zinc-900">82%</h3>
               </div>
-              <h3 className="mt-4 text-2xl font-semibold text-zinc-900">82%</h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-500">
                 Say studying is enjoyable, affordable, and effective.
               </p>
