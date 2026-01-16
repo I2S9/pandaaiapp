@@ -107,7 +107,7 @@ export default function Navbar({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full border-b border-zinc-100 bg-white/90 backdrop-blur">
+    <header className="relative z-30 w-full border-b border-zinc-100 bg-white/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
         <a href={`${basePath}#top`} className="flex items-center gap-0.5">
           <Image
@@ -218,7 +218,7 @@ export default function Navbar({
                 />
               </svg>
             </button>
-            <div className="invisible absolute left-1/2 top-full z-10 mt-2 w-36 -translate-x-1/2 rounded-2xl border border-zinc-200 bg-white p-2 text-sm text-zinc-600 shadow-sm opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div className="pointer-events-auto invisible absolute left-1/2 top-full z-20 mt-2 w-36 -translate-x-1/2 rounded-2xl border border-zinc-200 bg-white p-2 text-sm text-zinc-600 shadow-sm opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
               {language.options.map((option) => (
                 <a
                   key={option.href}
