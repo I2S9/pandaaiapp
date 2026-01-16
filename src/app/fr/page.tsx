@@ -139,7 +139,7 @@ export default function HomeFr() {
 
         <section
           id="features"
-          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
+          className="mx-auto w-full max-w-5xl border-t border-zinc-100 pb-0 pt-16"
         >
           <div className="flex flex-wrap justify-center gap-4">
             <div className="w-full max-w-[200px] rounded-3xl border border-zinc-200 bg-white px-5 py-6 shadow-sm">
@@ -247,9 +247,17 @@ export default function HomeFr() {
               </p>
             </div>
           </div>
+          <div className="mb-8 mt-8 flex w-full justify-center">
+            <a
+              href="#auth"
+              className="inline-flex items-center justify-center rounded-full border border-zinc-200 bg-white px-8 py-3 text-base font-normal text-zinc-500 shadow-sm"
+            >
+              Commencer votre parcours d’apprentissage maintenant
+            </a>
+          </div>
         </section>
 
-        <section className="w-full py-10">
+        <section className="w-full pb-10">
           <div className="mx-auto w-full max-w-6xl rounded-[28px] bg-[#DDBDFD] px-6 py-16">
             <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
               <h2 className="text-4xl font-semibold text-zinc-900 sm:text-5xl">
