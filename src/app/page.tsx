@@ -199,10 +199,69 @@ export default function Home() {
               PandaAi turns your own materials into a structured study loop of
               practice, feedback, and review with a calm, minimal interface.
             </p>
-        </div>
+          </div>
         </section>
 
-        
+        <section
+          id="faq"
+          className="mx-auto w-full max-w-4xl border-t border-zinc-100 py-16"
+        >
+          <h2 className="text-center text-4xl font-semibold text-zinc-900">
+            Frequently Asked Questions
+          </h2>
+          <div className="mt-10 space-y-4">
+            {[
+              {
+                question: "How is PandaAi different?",
+                answer:
+                  "PandaAi transforms your own materials into flashcards, quizzes, summaries, and exam practice so you study from what your class actually covers. It combines active recall and spaced repetition with a calm interface, so you get structure, feedback, and progress in one place.",
+              },
+              {
+                question: "Who creates the content on PandaAi?",
+                answer:
+                  "You do. You upload PDFs, notes, or text, and PandaAi turns that source into study assets tailored to your course. Nothing is pulled from external sources, so the output stays aligned with your curriculum and goals.",
+              },
+              {
+                question: "What resources can I access on PandaAi?",
+                answer:
+                  "You can generate flashcards, adaptive quizzes, concise summaries, and a structured exam mode. Everything is built from your uploads, and you can choose the scope, difficulty, and number of items each time.",
+              },
+              {
+                question: "How does PandaAi use my data?",
+                answer:
+                  "Your content is used only to create your study materials and improve your experience in the app. We do not share your files with third parties, and you can remove your content at any time.",
+              },
+              {
+                question: "Can I try PandaAi before committing?",
+                answer:
+                  "Yes. The free experience lets you try the full study loop with limited usage so you can see the value before upgrading. You can generate a small set of flashcards and quizzes to test the workflow.",
+              },
+              {
+                question: "Can I share my account with friends or family?",
+                answer:
+                  "For the best learning outcomes and privacy, each learner should use their own account. Progress, recommendations, and mastery tracking are personalized, so sharing an account reduces accuracy.",
+              },
+            ].map((item) => (
+              <details
+                key={item.question}
+                className="group rounded-2xl bg-zinc-100/80 px-6 py-4"
+              >
+                <summary className="flex cursor-pointer items-center justify-between text-xl font-semibold text-zinc-900">
+                  <span>{item.question}</span>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-zinc-900 text-white">
+                    <span className="text-4xl font-light leading-none transition-transform group-open:rotate-45">
+                      +
+                    </span>
+                  </span>
+                </summary>
+                <div className="mt-3 text-base text-zinc-600">
+                  {item.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+
       </main>
       <footer className="w-full px-6 pb-6">
         <div className="w-full rounded-[28px] bg-[#DDBDFD]">

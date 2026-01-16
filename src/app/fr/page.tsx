@@ -218,7 +218,66 @@ export default function HomeFr() {
           </div>
         </section>
 
-        
+        <section
+          id="faq"
+          className="mx-auto w-full max-w-4xl border-t border-zinc-100 py-16"
+        >
+          <h2 className="text-center text-4xl font-semibold text-zinc-900">
+            Questions fréquentes
+          </h2>
+          <div className="mt-10 space-y-4">
+            {[
+              {
+                question: "En quoi PandaAi est différent ?",
+                answer:
+                  "PandaAi transforme vos supports en flashcards, quiz, résumés et examens blancs basés sur votre cours. L’expérience combine rappel actif, répétition espacée et retours clairs pour un apprentissage structuré et efficace.",
+              },
+              {
+                question: "Qui crée le contenu sur PandaAi ?",
+                answer:
+                  "Vous importez vos documents et PandaAi génère les supports d’étude à partir de ce contenu. Rien n’est récupéré ailleurs, ce qui garantit un alignement fidèle avec votre programme.",
+              },
+              {
+                question: "Quelles ressources sont disponibles ?",
+                answer:
+                  "Flashcards, quiz adaptatifs, résumés et mode examen, tous construits depuis vos documents. Vous choisissez le périmètre, le niveau de difficulté et le nombre d’items.",
+              },
+              {
+                question: "Comment PandaAi utilise mes données ?",
+                answer:
+                  "Vos données servent uniquement à créer vos supports d’étude et à améliorer votre expérience. Elles ne sont pas partagées avec des tiers, et vous pouvez supprimer votre contenu à tout moment.",
+              },
+              {
+                question: "Puis-je tester PandaAi avant de m’engager ?",
+                answer:
+                  "Oui, l’expérience gratuite permet d’essayer tout le cycle d’étude avec des limites. Vous pouvez générer un petit nombre de flashcards et de quiz pour valider le workflow.",
+              },
+              {
+                question: "Puis-je partager mon compte ?",
+                answer:
+                  "Pour de meilleurs résultats et la confidentialité, un compte par apprenant est recommandé. Le suivi de progression est personnalisé et devient moins fiable en cas de partage.",
+              },
+            ].map((item) => (
+              <details
+                key={item.question}
+                className="group rounded-2xl bg-zinc-100/80 px-6 py-4"
+              >
+                <summary className="flex cursor-pointer items-center justify-between text-xl font-semibold text-zinc-900">
+                  <span>{item.question}</span>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-zinc-900 text-white">
+                    <span className="text-4xl font-light leading-none transition-transform group-open:rotate-45">
+                      +
+                    </span>
+                  </span>
+                </summary>
+                <div className="mt-3 text-base text-zinc-600">
+                  {item.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+
       </main>
       <footer className="w-full px-6 pb-6">
         <div className="w-full rounded-[28px] bg-[#DDBDFD]">
