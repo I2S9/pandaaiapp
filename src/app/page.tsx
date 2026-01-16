@@ -162,13 +162,13 @@ export default function Home() {
     >
       <Navbar />
       <main className="flex-1 px-6">
-        <section className="relative mx-auto w-full max-w-6xl pb-28 pt-20 sm:pt-28">
+        <section className="relative mx-auto w-full max-w-6xl px-6 pb-28 pt-20 sm:pt-28">
           <div
             className="pointer-events-none absolute right-0 top-1/2 hidden h-[360px] w-[360px] -translate-y-1/2 bg-contain bg-no-repeat lg:block"
             style={{ backgroundImage: "url(/assets/images/panda-header.png)" }}
             aria-hidden="true"
           />
-          <div className="flex flex-col items-start pl-2 text-left sm:pl-4">
+          <div className="flex flex-col items-start text-left">
             <div className="inline-flex flex-col items-start">
               <h1 className="text-5xl font-semibold leading-tight tracking-tight text-zinc-900 sm:text-7xl">
                 Learn Smart,
@@ -505,7 +505,7 @@ export default function Home() {
       </main>
       <footer className="w-full px-6 pb-6">
         <div className="w-full rounded-[28px] bg-[#DDBDFD]">
-          <div className="mx-auto w-full max-w-6xl px-8 py-12">
+          <div className="mx-auto w-full max-w-6xl px-6 py-12">
             <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:items-end">
               <div className="lg:self-end">
                 <div className="flex items-center gap-1">

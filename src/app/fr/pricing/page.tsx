@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
 
@@ -27,8 +28,14 @@ export default function PricingPageFr() {
     <div className="min-h-screen bg-white text-zinc-900">
       <Navbar navLinks={navLinks} language={language} basePath="/fr" />
       <main className="px-6">
-        <section className="mx-auto grid w-full max-w-6xl gap-10 py-16 lg:grid-cols-[1.1fr_1fr]">
-          <div>
+        <section className="relative mx-auto w-full max-w-6xl px-6 py-16">
+          <div
+            className="pointer-events-none absolute right-6 top-1/2 hidden h-[420px] w-[420px] -translate-y-1/2 bg-contain bg-no-repeat lg:block"
+            style={{ backgroundImage: "url(/assets/images/panda-pricing.png)" }}
+            aria-hidden="true"
+          />
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr]">
+            <div>
             <h1 className="text-4xl font-bold leading-tight text-zinc-900 sm:text-5xl lg:text-6xl">
               <span className="whitespace-nowrap">Un abonnement adapté,</span>
               <br />
@@ -71,6 +78,7 @@ export default function PricingPageFr() {
                   <p className="mt-3 text-sm text-zinc-600">{item.text}</p>
                 </div>
               ))}
+            </div>
             </div>
           </div>
         </section>
