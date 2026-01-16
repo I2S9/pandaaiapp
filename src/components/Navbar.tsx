@@ -116,6 +116,7 @@ export default function Navbar({
             width={96}
             height={96}
             className="h-24 w-24 rounded-2xl object-cover"
+            quality={100}
             priority
           />
           <span className="text-xl font-semibold text-zinc-900">PandaAi</span>

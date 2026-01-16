@@ -526,17 +526,20 @@ export default function HomeFr() {
           <div className="mx-auto w-full max-w-6xl px-6 py-12">
             <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:items-end">
               <div className="lg:self-end">
-                <div className="flex items-center gap-1">
+                <div className="flex flex-col items-start">
                   <Image
                     src="/assets/images/logo.png"
                     alt="Logo PandaAi"
                     width={88}
                     height={88}
-                    className="h-[88px] w-[88px] rounded-2xl object-cover"
+                    className="ml-[-16px] h-[88px] w-[88px] rounded-2xl object-contain"
+                    quality={100}
                   />
-                  <p className="text-xl font-semibold text-zinc-900">PandaAi</p>
+                  <p className="mt-2 text-xl font-semibold text-zinc-900">
+                    PandaAi
+                  </p>
                 </div>
-                <p className="mt-3 max-w-xl text-base leading-relaxed text-white/90">
+                <p className="mt-3 max-w-xl text-base leading-relaxed text-zinc-900">
                   Texte temporaire pour la footer. Remplacer par les informations
                   officielles avant la mise en ligne.
                 </p>
@@ -544,49 +547,49 @@ export default function HomeFr() {
               <div className="flex w-full flex-col items-start lg:items-end">
                 <div className="flex w-full flex-col gap-8 sm:flex-row sm:justify-end">
                   <div className="lg:justify-self-start">
-                    <p className="text-base font-semibold tracking-wide text-white/80">
+                    <p className="text-base font-semibold tracking-wide text-zinc-900">
                       Produit
                     </p>
-                    <div className="mt-4 flex flex-col gap-2 text-base text-white/90">
-                      <a href="#features" className="transition hover:text-white">
+                    <div className="mt-4 flex flex-col gap-2 text-base text-zinc-900">
+                      <a href="#features" className="transition hover:text-zinc-700">
                         Fonctionnalités
                       </a>
-                      <a href="#tutoring" className="transition hover:text-white">
+                      <a href="#tutoring" className="transition hover:text-zinc-700">
                         Tutorat IA
                       </a>
-                      <a href="#pricing" className="transition hover:text-white">
+                      <a href="#pricing" className="transition hover:text-zinc-700">
                         Tarifs
                       </a>
                     </div>
                   </div>
                   <div className="lg:justify-self-start">
-                    <p className="text-base font-semibold tracking-wide text-white/80">
+                    <p className="text-base font-semibold tracking-wide text-zinc-900">
                       Société
                     </p>
-                    <div className="mt-4 flex flex-col gap-2 text-base text-white/90">
-                      <a href="#about" className="transition hover:text-white">
+                    <div className="mt-4 flex flex-col gap-2 text-base text-zinc-900">
+                      <a href="#about" className="transition hover:text-zinc-700">
                         À propos
                       </a>
-                      <a href="#top" className="transition hover:text-white">
+                      <a href="#top" className="transition hover:text-zinc-700">
                         Retour en haut
                       </a>
-                      <a href="#top" className="transition hover:text-white">
+                      <a href="#top" className="transition hover:text-zinc-700">
                         Contact
                       </a>
                     </div>
                   </div>
                   <div className="lg:justify-self-start">
-                    <p className="text-base font-semibold tracking-wide text-white/80">
+                    <p className="text-base font-semibold tracking-wide text-zinc-900">
                       Légal
                     </p>
-                    <div className="mt-4 flex flex-col gap-2 text-base text-white/90">
-                      <a href="#top" className="transition hover:text-white">
+                    <div className="mt-4 flex flex-col gap-2 text-base text-zinc-900">
+                      <a href="#top" className="transition hover:text-zinc-700">
                         Confidentialité
                       </a>
-                      <a href="#top" className="transition hover:text-white">
+                      <a href="#top" className="transition hover:text-zinc-700">
                         Conditions
                       </a>
-                      <a href="#top" className="transition hover:text-white">
+                      <a href="#top" className="transition hover:text-zinc-700">
                         Support
                       </a>
                     </div>
@@ -594,7 +597,7 @@ export default function HomeFr() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 border-t border-white/25 pt-6 text-center text-base text-white/80">
+            <div className="mt-10 border-t border-zinc-900/20 pt-6 text-center text-base text-zinc-900">
               © 2026 PandaAi. Tous droits réservés.
             </div>
           </div>
