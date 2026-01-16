@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 
 const navLinks = [
   { label: "Fonctionnalités", href: "/fr#features", hasChevron: true },
+  { label: "Cours", href: "/fr#courses", hasChevron: true },
   { label: "Tutorat IA", href: "/fr#tutoring" },
   { label: "Tarifs", href: "/fr/pricing" },
   { label: "À propos", href: "/fr#about" },
@@ -152,6 +153,30 @@ export default function HomeFr() {
               </div>
               <p className="mt-3 text-sm leading-relaxed text-zinc-500">
                 Disent que l’étude est agréable, abordable et efficace.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="courses"
+          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
+        >
+          <div className="grid gap-6 md:grid-cols-[1.2fr_1fr] md:items-center">
+            <div>
+              <h2 className="text-3xl font-semibold">Cours structurés</h2>
+              <p className="mt-4 text-base text-zinc-600 sm:text-lg">
+                Transformez chaque cours en un parcours clair avec sections,
+                objectifs et boucles de pratique intégrées.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-zinc-100 bg-zinc-50 p-7 shadow-sm">
+              <p className="text-base font-semibold text-zinc-900">
+                Parcours prêt pour l&apos;étude
+              </p>
+              <p className="mt-3 text-base text-zinc-600">
+                Organisez les supports par thème, suivez la maîtrise et révisez
+                au bon moment.
               </p>
             </div>
           </div>

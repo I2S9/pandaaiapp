@@ -156,66 +156,6 @@ export default function Home() {
         </section>
 
         <section
-          id="tutoring"
-          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
-        >
-          <div className="grid gap-6 md:grid-cols-[1.2fr_1fr] md:items-center">
-            <div>
-              <h2 className="text-3xl font-semibold">AI tutoring that guides</h2>
-              <p className="mt-4 text-base text-zinc-600 sm:text-lg">
-                Panda Coach starts with hints, then asks targeted follow-up
-                questions to unlock understanding without giving away the
-                answer.
-              </p>
-            </div>
-            <div className="rounded-3xl border border-zinc-100 bg-white p-7 shadow-sm">
-              <p className="text-base font-semibold text-zinc-900">
-                Hint-first support
-              </p>
-              <p className="mt-3 text-base text-zinc-600">
-                Get a guided path for each concept with short, focused prompts
-                that help you connect the dots.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="pricing"
-          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
-        >
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-3xl border border-zinc-100 bg-zinc-50 p-7">
-              <h2 className="text-xl font-semibold">Free trial loop</h2>
-              <p className="mt-3 text-base text-zinc-600">
-                Generate a limited set of flashcards, quizzes, and summaries to
-                experience the full study cycle.
-              </p>
-            </div>
-            <div className="rounded-3xl border border-zinc-200 bg-white p-7 shadow-sm">
-              <h2 className="text-xl font-semibold">Premium expansion</h2>
-              <p className="mt-3 text-base text-zinc-600">
-                Unlock higher limits, advanced analytics, and more tutoring
-                sessions.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="about"
-          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
-        >
-          <div className="rounded-3xl border border-zinc-100 bg-white p-7 shadow-sm">
-            <h2 className="text-3xl font-semibold">About PandaAi</h2>
-            <p className="mt-4 text-base text-zinc-600 sm:text-lg">
-              PandaAi turns your own materials into a structured study loop of
-              practice, feedback, and review with a calm, minimal interface.
-            </p>
-          </div>
-        </section>
-
-        <section
           id="faq"
           className="mx-auto w-full max-w-4xl border-t border-zinc-100 py-16"
         >

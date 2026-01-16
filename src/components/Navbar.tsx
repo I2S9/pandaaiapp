@@ -46,6 +46,7 @@ export default function Navbar({
     navLinks ??
     [
       { label: "Features", href: `${basePath}#features`, hasChevron: true },
+      { label: "Courses", href: `${basePath}#courses`, hasChevron: true },
       { label: "AI Tutoring", href: `${basePath}#tutoring` },
       {
         label: "Pricing",
