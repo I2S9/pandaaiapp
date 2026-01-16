@@ -157,6 +157,19 @@ export default function HomeFr() {
           </div>
         </section>
 
+        <section className="w-full py-10">
+          <div className="mx-auto w-full max-w-6xl rounded-[28px] bg-[#DDBDFD] px-6 py-16">
+            <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+              <h2 className="text-4xl font-semibold text-zinc-900 sm:text-5xl">
+                Vainquez la courbe de l’oubli,
+                <br />
+                une bonne fois pour toutes.
+              </h2>
+              <div className="mt-3 h-2 w-[56ch] bg-white" />
+            </div>
+          </div>
+        </section>
+
         <section
           id="tutoring"
           className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
