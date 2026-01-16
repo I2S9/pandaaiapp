@@ -106,6 +106,68 @@ export default function HomeFr() {
     testimonials.slice(3, 6),
     testimonials.slice(6, 9),
   ];
+  const featureShowcase = [
+    {
+      title: "Flashcards intelligentes",
+      description:
+        "Créez des cartes de rappel à partir de vos supports et révisez vite.",
+      color: "bg-[#EDE7FF]",
+    },
+    {
+      title: "Résumés ciblés",
+      description:
+        "Transformez les chapitres en notes claires pour réviser efficacement.",
+      color: "bg-[#E8F1FF]",
+    },
+    {
+      title: "Quiz adaptatifs",
+      description:
+        "Entraînez-vous avec feedback et explications adaptées à votre niveau.",
+      color: "bg-[#E7F6EC]",
+    },
+    {
+      title: "Mode examen",
+      description:
+        "Simulez les épreuves, gérez le temps et suivez la maîtrise par thème.",
+      color: "bg-[#FFEFE1]",
+    },
+    {
+      title: "Panda Coach",
+      description:
+        "Un tutorat par indices pour comprendre sans donner la réponse.",
+      color: "bg-[#F2E7FF]",
+    },
+    {
+      title: "Structure de cours",
+      description:
+        "Organisez les uploads en sections et objectifs pour un parcours clair.",
+      color: "bg-[#EAF5FF]",
+    },
+    {
+      title: "Tableau de bord",
+      description:
+        "Suivez précision, rythme et maîtrise par thème en un coup d’œil.",
+      color: "bg-[#F1F7E8]",
+    },
+    {
+      title: "Plans d’étude",
+      description:
+        "Planifiez les révisions avec répétition espacée et rappels clairs.",
+      color: "bg-[#FFF2E9]",
+    },
+    {
+      title: "Notes intelligentes",
+      description:
+        "Capturez l’essentiel en notes propres et faciles à partager.",
+      color: "bg-[#F7E9F1]",
+    },
+    {
+      title: "Analyses d’examen",
+      description:
+        "Obtenez vos forces et axes d’amélioration après chaque examen blanc.",
+      color: "bg-[#E8F0FF]",
+    },
+  ];
   const avatarColors = ["bg-[#D9F3E3]", "bg-[#F9D6E4]", "bg-[#FFF1BF]", "bg-[#DCE8FF]"];
 
   return (
@@ -326,6 +388,33 @@ export default function HomeFr() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-6xl border-t border-zinc-100 py-16">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-zinc-900 sm:text-4xl">
+              Toutes les fonctionnalités
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {featureShowcase.map((feature) => (
+              <div
+                key={feature.title}
+                className="rounded-2xl border border-zinc-200 bg-white px-7 py-10 text-center shadow-sm"
+              >
+                <div
+                  className={`mx-auto h-16 w-16 rounded-2xl ${feature.color}`}
+                  aria-hidden="true"
+                />
+                <p className="mt-6 text-lg font-semibold text-zinc-900">
+                  {feature.title}
+                </p>
+                <p className="mt-3 text-base text-zinc-500">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 

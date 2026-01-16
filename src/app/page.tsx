@@ -90,6 +90,68 @@ export default function Home() {
     testimonials.slice(3, 6),
     testimonials.slice(6, 9),
   ];
+  const featureShowcase = [
+    {
+      title: "Smart Flashcards",
+      description:
+        "Create active recall cards from any document and review them in minutes.",
+      color: "bg-[#EDE7FF]",
+    },
+    {
+      title: "Focused Summaries",
+      description:
+        "Turn long chapters into clear study notes you can scan before exams.",
+      color: "bg-[#E8F1FF]",
+    },
+    {
+      title: "Adaptive Quizzes",
+      description:
+        "Practice with instant feedback and explanations that adapt to your level.",
+      color: "bg-[#E7F6EC]",
+    },
+    {
+      title: "Exam Mode",
+      description:
+        "Simulate test conditions, manage timing, and track mastery by topic.",
+      color: "bg-[#FFEFE1]",
+    },
+    {
+      title: "Panda Coach",
+      description:
+        "Hints-first tutoring that builds understanding instead of giving answers.",
+      color: "bg-[#F2E7FF]",
+    },
+    {
+      title: "Course Structure",
+      description:
+        "Organize uploads into sections and goals for a clean study path.",
+      color: "bg-[#EAF5FF]",
+    },
+    {
+      title: "Progress Dashboard",
+      description:
+        "See accuracy, streaks, and mastery by topic at a glance.",
+      color: "bg-[#F1F7E8]",
+    },
+    {
+      title: "Study Plans",
+      description:
+        "Plan review sessions with spaced repetition and clear reminders.",
+      color: "bg-[#FFF2E9]",
+    },
+    {
+      title: "Smart Notes",
+      description:
+        "Capture key ideas in clean, shareable notes that stay organized.",
+      color: "bg-[#F7E9F1]",
+    },
+    {
+      title: "Exam Insights",
+      description:
+        "Get breakdowns of strengths and gaps after every practice exam.",
+      color: "bg-[#E8F0FF]",
+    },
+  ];
   const avatarColors = ["bg-[#D9F3E3]", "bg-[#F9D6E4]", "bg-[#FFF1BF]", "bg-[#DCE8FF]"];
 
   return (
@@ -310,6 +372,33 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-6xl border-t border-zinc-100 py-16">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-zinc-900 sm:text-4xl">
+              All Features
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {featureShowcase.map((feature) => (
+              <div
+                key={feature.title}
+                className="rounded-2xl border border-zinc-200 bg-white px-7 py-10 text-center shadow-sm"
+              >
+                <div
+                  className={`mx-auto h-16 w-16 rounded-2xl ${feature.color}`}
+                  aria-hidden="true"
+                />
+                <p className="mt-6 text-lg font-semibold text-zinc-900">
+                  {feature.title}
+                </p>
+                <p className="mt-3 text-base text-zinc-500">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
