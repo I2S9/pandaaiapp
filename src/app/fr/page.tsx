@@ -17,6 +17,97 @@ const language = {
 };
 
 export default function HomeFr() {
+  const testimonials = [
+    {
+      name: "Maya Turner",
+      role: "Étudiante en biologie",
+      prefix:
+        "Mon plan hebdo m’a tenue régulière entre cours et TP. ",
+      highlight: "J’ai gagné 18 points",
+      suffix:
+        " avant les examens et je me suis sentie plus sereine. Les retours m’ont aidée à corriger vite.",
+    },
+    {
+      name: "Daniel Ruiz",
+      role: "Étudiant en ingénierie",
+      prefix:
+        "Les flashcards étaient précises et rapides à revoir. ",
+      highlight: "Ma rétention a augmenté",
+      suffix:
+        " et j’ai arrêté de relire les mêmes chapitres. Les quiz m’ont motivé.",
+    },
+    {
+      name: "Leah Brooks",
+      role: "Histoire",
+      prefix:
+        "Le mode examen m’a aidée à gérer le temps des réponses. ",
+      highlight: "J’ai fini en avance",
+      suffix:
+        " et mes copies étaient mieux structurées. L’entraînement était réaliste.",
+    },
+    {
+      name: "Omar Ali",
+      role: "Pré‑médecine",
+      prefix:
+        "Le coach m’a guidé avec des indices au bon moment. ",
+      highlight: "J’ai compris le pourquoi",
+      suffix:
+        " derrière chaque notion et mes scores ont progressé. C’était très proche d’un tutorat.",
+    },
+    {
+      name: "Sofia Martin",
+      role: "Droit",
+      prefix:
+        "Les résumés ont clarifié mes lectures longues. ",
+      highlight: "L’étude est devenue plus calme",
+      suffix:
+        " et j’ai pu me concentrer sur l’argumentation. J’ai gagné du temps chaque semaine.",
+    },
+    {
+      name: "Ethan Park",
+      role: "Économie",
+      prefix:
+        "Les quiz s’adaptent à mon niveau et ciblent mes lacunes. ",
+      highlight: "Mon taux de réussite a grimpé",
+      suffix:
+        " en quelques séances seulement. Les explications étaient claires.",
+    },
+    {
+      name: "Julia Chen",
+      role: "Psychologie",
+      prefix:
+        "Les rappels étaient parfaitement synchronisés. ",
+      highlight: "Je n’oublie plus",
+      suffix:
+        " les définitions clés au moment des révisions. Le rythme était idéal.",
+    },
+    {
+      name: "Noah Lewis",
+      role: "Chimie",
+      prefix:
+        "J’ai importé mes notes et tout était rangé par thème. ",
+      highlight: "Mon temps de préparation a été divisé",
+      suffix:
+        " par deux sans sacrifier la qualité. Les sections sont très pratiques.",
+    },
+    {
+      name: "Ava Patel",
+      role: "Informatique",
+      prefix:
+        "La boucle d’étude m’a rendue beaucoup plus constante. ",
+      highlight: "J’ai terminé le programme plus tôt",
+      suffix:
+        " et j’ai eu le temps de faire des exercices avancés. J’ai enfin gardé le rythme.",
+    },
+  ];
+
+  const columns = [
+    testimonials.slice(0, 3),
+    testimonials.slice(3, 6),
+    testimonials.slice(6, 9),
+  ];
+  const avatarColors = ["bg-[#D9F3E3]", "bg-[#F9D6E4]", "bg-[#FFF1BF]", "bg-[#DCE8FF]"];
+
   return (
     <div
       id="top"
@@ -158,30 +249,6 @@ export default function HomeFr() {
           </div>
         </section>
 
-        <section
-          id="courses"
-          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
-        >
-          <div className="grid gap-6 md:grid-cols-[1.2fr_1fr] md:items-center">
-            <div>
-              <h2 className="text-3xl font-semibold">Cours structurés</h2>
-              <p className="mt-4 text-base text-zinc-600 sm:text-lg">
-                Transformez chaque cours en un parcours clair avec sections,
-                objectifs et boucles de pratique intégrées.
-              </p>
-            </div>
-            <div className="rounded-3xl border border-zinc-100 bg-zinc-50 p-7 shadow-sm">
-              <p className="text-base font-semibold text-zinc-900">
-                Parcours prêt pour l&apos;étude
-              </p>
-              <p className="mt-3 text-base text-zinc-600">
-                Organisez les supports par thème, suivez la maîtrise et révisez
-                au bon moment.
-              </p>
-            </div>
-          </div>
-        </section>
-
         <section className="w-full py-10">
           <div className="mx-auto w-full max-w-6xl rounded-[28px] bg-[#DDBDFD] px-6 py-16">
             <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
@@ -196,63 +263,61 @@ export default function HomeFr() {
         </section>
 
         <section
-          id="tutoring"
-          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
+          id="reviews"
+          className="mx-auto w-full max-w-6xl border-t border-zinc-100 py-16"
         >
-          <div className="grid gap-6 md:grid-cols-[1.2fr_1fr] md:items-center">
-            <div>
-              <h2 className="text-3xl font-semibold">
-                Un tutorat IA qui guide
-              </h2>
-              <p className="mt-4 text-base text-zinc-600 sm:text-lg">
-                Panda Coach commence par des indices, puis pose des questions
-                ciblées pour débloquer la compréhension sans donner la réponse.
-              </p>
-            </div>
-            <div className="rounded-3xl border border-zinc-100 bg-white p-7 shadow-sm">
-              <p className="text-base font-semibold text-zinc-900">
-                Aide par indices
-              </p>
-              <p className="mt-3 text-base text-zinc-600">
-                Un parcours guidé par concept, avec de courts prompts pour faire
-                les bons liens.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="pricing"
-          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
-        >
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-3xl border border-zinc-100 bg-zinc-50 p-7">
-              <h2 className="text-xl font-semibold">Essai gratuit</h2>
-              <p className="mt-3 text-base text-zinc-600">
-                Générez un nombre limité de flashcards, quiz et résumés pour
-                vivre le cycle complet.
-              </p>
-            </div>
-            <div className="rounded-3xl border border-zinc-200 bg-white p-7 shadow-sm">
-              <h2 className="text-xl font-semibold">Premium</h2>
-              <p className="mt-3 text-base text-zinc-600">
-                Débloquez des limites plus élevées, des analyses avancées et
-                plus de sessions de tutorat.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="about"
-          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
-        >
-          <div className="rounded-3xl border border-zinc-100 bg-white p-7 shadow-sm">
-            <h2 className="text-3xl font-semibold">À propos de PandaAi</h2>
-            <p className="mt-4 text-base text-zinc-600 sm:text-lg">
-              PandaAi transforme vos contenus en une boucle structurée de
-              pratique, feedback et révision avec une interface minimaliste.
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-zinc-900 sm:text-4xl">
+              Adoré par +500 étudiants
+            </h2>
+            <p className="mt-3 text-base text-zinc-600">
+              Des résultats concrets grâce à une pratique ciblée.
             </p>
+          </div>
+          <div className="mt-10 rounded-3xl bg-[#F5F1EC] p-6">
+            <div className="relative grid gap-1 lg:grid-cols-3">
+              {columns.map((items, columnIndex) => (
+                <div key={columnIndex} className="relative h-[520px] overflow-hidden">
+                  <div
+                    className="testimonial-track flex flex-col gap-4"
+                    style={{
+                      ["--duration" as any]: columnIndex === 1 ? "30s" : "26s",
+                    }}
+                  >
+                    {[...items, ...items].map((item, itemIndex) => (
+                      <div
+                        key={`${item.name}-${itemIndex}`}
+                        className="w-88 min-h-56 rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm"
+                      >
+                        <p className="text-sm text-zinc-600">
+                          {item.prefix}
+                          <span className="rounded-md bg-[#DDBDFD] px-1.5 py-0.5 font-semibold text-[#5D3FB6]">
+                            {item.highlight}
+                          </span>
+                          {item.suffix}
+                        </p>
+                        <div className="mt-4 flex items-center gap-3">
+                        <div
+                          className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold text-zinc-900 ${avatarColors[itemIndex % avatarColors.length]}`}
+                        >
+                            {item.name
+                              .split(" ")
+                              .map((part) => part[0])
+                              .join("")}
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-zinc-900">
+                              {item.name}
+                            </p>
+                            <p className="text-xs text-zinc-500">{item.role}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

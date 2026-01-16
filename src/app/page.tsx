@@ -1,6 +1,97 @@
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
+  const testimonials = [
+    {
+      name: "Maya Turner",
+      role: "Biology student",
+      prefix:
+        "My weekly review plan kept me consistent across lectures and labs. ",
+      highlight: "I raised my score by 18 points",
+      suffix:
+        " before finals and finally felt confident in the exam room. The feedback helped me fix weak spots fast.",
+    },
+    {
+      name: "Daniel Ruiz",
+      role: "Engineering major",
+      prefix:
+        "The flashcards were precise and fast to review between classes. ",
+      highlight: "My retention improved",
+      suffix:
+        " and I stopped re-reading the same chapters over and over. The quizzes kept me honest.",
+    },
+    {
+      name: "Leah Brooks",
+      role: "History student",
+      prefix:
+        "Exam Mode helped me pace long answers without panicking. ",
+      highlight: "I finished with time to spare",
+      suffix:
+        " and my essays were sharper because I practiced the format. The timing felt realistic.",
+    },
+    {
+      name: "Omar Ali",
+      role: "Pre-med",
+      prefix:
+        "The AI coach nudged me with hints instead of giving away answers. ",
+      highlight: "I understood the why",
+      suffix:
+        " behind each concept and my practice scores climbed. It felt like real tutoring.",
+    },
+    {
+      name: "Sofia Martin",
+      role: "Law student",
+      prefix:
+        "Summaries turned dense cases into clear, usable briefs. ",
+      highlight: "Studying felt calmer",
+      suffix:
+        " and I could focus on argument structure instead of memorizing. I saved hours each week.",
+    },
+    {
+      name: "Ethan Park",
+      role: "Economics",
+      prefix:
+        "Quizzes matched my difficulty level and revealed weak spots fast. ",
+      highlight: "I improved accuracy",
+      suffix:
+        " after a few sessions and my midterm was the best yet. The explanations were clear.",
+    },
+    {
+      name: "Julia Chen",
+      role: "Psychology",
+      prefix:
+        "Spaced repetition reminders were perfectly timed for my schedule. ",
+      highlight: "I stopped forgetting",
+      suffix:
+        " key definitions and finally felt ahead of the curve. It removed the guesswork.",
+    },
+    {
+      name: "Noah Lewis",
+      role: "Chemistry",
+      prefix:
+        "I imported my notes and everything was organized by topic. ",
+      highlight: "My prep time dropped",
+      suffix:
+        " by half and I still covered more material than usual. The sections made review easy.",
+    },
+    {
+      name: "Ava Patel",
+      role: "Computer science",
+      prefix:
+        "The study loop kept me consistent across projects and theory. ",
+      highlight: "I finished the syllabus early",
+      suffix:
+        " and used the extra time to practice harder problems. It kept me accountable.",
+    },
+  ];
+
+  const columns = [
+    testimonials.slice(0, 3),
+    testimonials.slice(3, 6),
+    testimonials.slice(6, 9),
+  ];
+  const avatarColors = ["bg-[#D9F3E3]", "bg-[#F9D6E4]", "bg-[#FFF1BF]", "bg-[#DCE8FF]"];
+
   return (
     <div
       id="top"
@@ -151,6 +242,65 @@ export default function Home() {
                 Once And For All.
               </h2>
               <div className="mt-3 h-2 w-[46ch] bg-white" />
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="reviews"
+          className="mx-auto w-full max-w-6xl border-t border-zinc-100 py-16"
+        >
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-zinc-900 sm:text-4xl">
+              Loved by +500 students
+            </h2>
+            <p className="mt-3 text-base text-zinc-600">
+              Real study wins powered by focused practice and review.
+            </p>
+          </div>
+          <div className="mt-10 rounded-3xl bg-[#F5F1EC] p-6">
+            <div className="relative grid gap-1 lg:grid-cols-3">
+              {columns.map((items, columnIndex) => (
+                <div key={columnIndex} className="relative h-[520px] overflow-hidden">
+                  <div
+                    className="testimonial-track flex flex-col gap-4"
+                    style={{
+                      ["--duration" as any]: columnIndex === 1 ? "30s" : "26s",
+                    }}
+                  >
+                    {[...items, ...items].map((item, itemIndex) => (
+                      <div
+                        key={`${item.name}-${itemIndex}`}
+                        className="w-88 min-h-56 rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm"
+                      >
+                        <p className="text-sm text-zinc-600">
+                          {item.prefix}
+                          <span className="rounded-md bg-[#DDBDFD] px-1.5 py-0.5 font-semibold text-[#5D3FB6]">
+                            {item.highlight}
+                          </span>
+                          {item.suffix}
+                        </p>
+                        <div className="mt-4 flex items-center gap-3">
+                        <div
+                          className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold text-zinc-900 ${avatarColors[itemIndex % avatarColors.length]}`}
+                        >
+                            {item.name
+                              .split(" ")
+                              .map((part) => part[0])
+                              .join("")}
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-zinc-900">
+                              {item.name}
+                            </p>
+                            <p className="text-xs text-zinc-500">{item.role}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
