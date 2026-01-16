@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar";
 
 const navLinks = [
-  { label: "Fonctionnalités", href: "#features", hasChevron: true },
-  { label: "Tutorat IA", href: "#tutoring" },
-  { label: "Tarifs", href: "#pricing" },
-  { label: "À propos", href: "#about" },
+  { label: "Fonctionnalités", href: "/fr#features", hasChevron: true },
+  { label: "Tutorat IA", href: "/fr#tutoring" },
+  { label: "Tarifs", href: "/fr/pricing" },
+  { label: "À propos", href: "/fr#about" },
 ];
 
 const language = {
@@ -21,7 +21,7 @@ export default function HomeFr() {
       id="top"
       className="flex min-h-screen flex-col bg-white text-zinc-900"
     >
-      <Navbar navLinks={navLinks} language={language} />
+      <Navbar navLinks={navLinks} language={language} basePath="/fr" />
       <main className="flex-1 px-6">
         <section className="mx-auto flex w-full max-w-6xl flex-col items-start pb-28 pl-2 pt-20 text-left sm:pl-4 sm:pt-28">
           <div className="inline-flex flex-col items-start">

@@ -19,14 +19,8 @@ type NavbarProps = {
     label: string;
     options: LanguageOption[];
   };
+  basePath?: string;
 };
-
-const defaultNavLinks: NavLink[] = [
-  { label: "Features", href: "#features", hasChevron: true },
-  { label: "AI Tutoring", href: "#tutoring" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "About us", href: "#about" },
-];
 
 const defaultLanguage = {
   label: "Language",
@@ -44,43 +38,56 @@ type FeatureItem = {
 };
 
 export default function Navbar({
-  navLinks = defaultNavLinks,
+  navLinks,
   language = defaultLanguage,
+  basePath = "/",
 }: NavbarProps) {
+  const resolvedNavLinks: NavLink[] =
+    navLinks ??
+    [
+      { label: "Features", href: `${basePath}#features`, hasChevron: true },
+      { label: "AI Tutoring", href: `${basePath}#tutoring` },
+      {
+        label: "Pricing",
+        href: basePath === "/" ? "/pricing" : `${basePath}/pricing`,
+      },
+      { label: "About us", href: `${basePath}#about` },
+    ];
+
   const featureItems: FeatureItem[] = [
     {
       label: "Panda Coach",
-      href: "#tutoring",
+      href: `${basePath}#tutoring`,
       icon: "coach",
       description: "AI-powered study buddy",
     },
     {
       label: "Spaced Repetition",
-      href: "#features",
+      href: `${basePath}#features`,
       icon: "lofi",
       description: "Memorize smarter, not harder",
     },
     {
       label: "Smart Notes",
-      href: "#features",
+      href: `${basePath}#features`,
       icon: "notes",
       description: "Turn content into bite-sized notes",
     },
     {
       label: "Flashcards",
-      href: "#features",
+      href: `${basePath}#features`,
       icon: "cards",
       description: "Active recall with quick reviews",
     },
     {
       label: "Quiz Generator",
-      href: "#features",
+      href: `${basePath}#features`,
       icon: "quiz",
       description: "Auto-generate quizzes from docs",
     },
     {
       label: "Exam Mode",
-      href: "#features",
+      href: `${basePath}#features`,
       icon: "exam",
       description: "Practice exams under timed mode",
     },
@@ -100,7 +107,7 @@ export default function Navbar({
   return (
     <header className="w-full border-b border-zinc-100 bg-white/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
-        <a href="#top" className="flex items-center gap-4">
+        <a href={`${basePath}#top`} className="flex items-center gap-4">
           <span
             aria-hidden="true"
             className="h-10 w-10 rounded-2xl bg-[#DDBDFD]"
@@ -109,8 +116,8 @@ export default function Navbar({
         </a>
 
         <nav className="hidden items-center gap-2 text-base font-semibold text-zinc-500 md:flex">
-          {navLinks.map((link) =>
-            link.href === "#features" ? (
+          {resolvedNavLinks.map((link) =>
+            link.hasChevron && link.href.includes("#features") ? (
               <div key={link.href} className="group relative">
                 <button
                   type="button"
@@ -250,7 +257,7 @@ export default function Navbar({
       {isOpen ? (
         <div className="border-t border-zinc-100 bg-white md:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-4 text-base font-semibold text-zinc-500">
-            {navLinks.map((link) => (
+          {resolvedNavLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
