@@ -321,7 +321,7 @@ export default function Home() {
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <h2 className="text-3xl font-semibold text-zinc-900 sm:text-4xl">
-                500+ students already learning with PandaAi
+                Students across the world learn with PandaAi
               </h2>
               <p className="mt-3 max-w-xl text-base text-zinc-600">
                 Built from real study materials and trusted for calmer, faster
