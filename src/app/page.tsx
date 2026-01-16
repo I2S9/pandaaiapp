@@ -32,9 +32,9 @@ export default function Home() {
 
         <section
           id="features"
-          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-14"
+          className="mx-auto w-full max-w-5xl border-t border-zinc-100 py-16"
         >
-          <div className="flex flex-wrap justify-center gap-1.5">
+          <div className="flex flex-wrap justify-center gap-4">
             <div className="w-full max-w-[200px] rounded-3xl border border-zinc-200 bg-white px-5 py-6 shadow-sm">
               <div className="flex items-center gap-3">
                 <svg
