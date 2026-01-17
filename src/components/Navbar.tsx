@@ -43,23 +43,24 @@ export default function Navbar({
   language = defaultLanguage,
   basePath = "/",
 }: NavbarProps) {
+  const basePrefix = basePath === "/" ? "" : basePath;
   const resolvedNavLinks: NavLink[] =
     navLinks ??
     [
       { label: "Features", href: `${basePath}#features`, hasChevron: true },
       { label: "Courses", href: `${basePath}#courses`, hasChevron: true },
-      { label: "AI Tutoring", href: `${basePath}#tutoring` },
+      { label: "AI Tutoring", href: `${basePrefix}/ai-tutoring` },
       {
         label: "Pricing",
         href: basePath === "/" ? "/pricing" : `${basePath}/pricing`,
       },
-      { label: "About us", href: `${basePath}#about` },
+      { label: "About us", href: `${basePrefix}/about` },
     ];
 
   const featureItems: FeatureItem[] = [
     {
       label: "Panda Coach",
-      href: `${basePath}#tutoring`,
+      href: `${basePrefix}/ai-tutoring`,
       icon: "coach",
       description: "AI-powered study buddy",
     },
