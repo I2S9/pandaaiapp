@@ -237,13 +237,13 @@ export default function Navbar({
         <div className="hidden items-center gap-3 md:flex">
           <a
             href="#auth"
-            className="rounded-2xl border border-zinc-200 px-5 py-2.5 text-base font-semibold text-zinc-900 hover:border-zinc-300"
+            className="rounded-2xl border border-zinc-200 px-5 py-2.5 text-base font-semibold text-zinc-900 shadow-sm transition-transform duration-150 hover:border-zinc-300 active:translate-y-0.5 active:shadow-none"
           >
             Login
           </a>
           <a
             href="#auth"
-            className="rounded-2xl bg-[#DDBDFD] px-5 py-2.5 text-base font-semibold text-white shadow-sm"
+            className="rounded-2xl bg-[#DDBDFD] px-5 py-2.5 text-base font-semibold text-white shadow-sm transition-transform duration-150 active:translate-y-0.5 active:shadow-none"
           >
             Sign Up
           </a>
@@ -311,14 +311,14 @@ export default function Navbar({
             <div className="flex items-center gap-3 pt-2">
               <a
                 href="#auth"
-                className="rounded-2xl border border-zinc-200 px-5 py-2.5 text-base font-semibold text-zinc-900"
+                className="rounded-2xl border border-zinc-200 px-5 py-2.5 text-base font-semibold text-zinc-900 shadow-sm transition-transform duration-150 active:translate-y-0.5 active:shadow-none"
                 onClick={() => setIsOpen(false)}
               >
                 Login
               </a>
               <a
                 href="#auth"
-                className="rounded-2xl bg-[#DDBDFD] px-5 py-2.5 text-base font-semibold text-white shadow-sm"
+                className="rounded-2xl bg-[#DDBDFD] px-5 py-2.5 text-base font-semibold text-white shadow-sm transition-transform duration-150 active:translate-y-0.5 active:shadow-none"
                 onClick={() => setIsOpen(false)}
               >
                 Sign Up

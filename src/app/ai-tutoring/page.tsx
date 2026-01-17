@@ -24,13 +24,13 @@ export default function AiTutoringPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="/pricing"
-                className="rounded-2xl bg-[#DDBDFD] px-6 py-3 text-base font-semibold text-white shadow-sm transition-transform duration-150 active:translate-y-0.5 active:shadow-none"
+                className="rounded-2xl bg-[#DDBDFD] px-6 py-3 text-base font-semibold text-white shadow-[0_6px_0_#A27BD8] transition-all hover:translate-y-0.5 hover:shadow-[0_4px_0_#A27BD8] active:translate-y-1 active:shadow-[0_2px_0_#A27BD8]"
               >
                 Start with Panda Coach
               </a>
               <a
                 href={`${homePath}#features`}
-                className="rounded-2xl border border-zinc-200 px-6 py-3 text-base font-semibold text-zinc-900 shadow-sm transition-transform duration-150 active:translate-y-0.5 active:shadow-none"
+                className="rounded-2xl border border-zinc-200 bg-white px-6 py-3 text-base font-semibold text-zinc-900 shadow-[0_6px_0_#E4E4E7] transition-all hover:translate-y-0.5 hover:shadow-[0_4px_0_#E4E4E7] active:translate-y-1 active:shadow-[0_2px_0_#E4E4E7]"
               >
                 Explore the full loop
               </a>
