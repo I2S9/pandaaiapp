@@ -25,13 +25,13 @@ export default function AboutPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="/pricing"
-                className="rounded-2xl bg-[#DDBDFD] px-6 py-3 text-base font-semibold text-white shadow-sm"
+                className="rounded-2xl bg-[#DDBDFD] px-6 py-3 text-base font-semibold text-white shadow-sm transition-transform duration-150 active:translate-y-0.5 active:shadow-none"
               >
                 Explore pricing
               </a>
               <a
                 href={`${homePath}#features`}
-                className="rounded-2xl border border-zinc-200 px-6 py-3 text-base font-semibold text-zinc-900"
+                className="rounded-2xl border border-zinc-200 px-6 py-3 text-base font-semibold text-zinc-900 shadow-sm transition-transform duration-150 active:translate-y-0.5 active:shadow-none"
               >
                 See features
               </a>
