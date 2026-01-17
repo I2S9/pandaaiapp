@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 const navLinks = [
   { label: "Fonctionnalités", href: "/fr#features", hasChevron: true },
   { label: "Cours", href: "/fr#courses", hasChevron: true },
-  { label: "Tutorat IA", href: "/fr#tutoring" },
+  { label: "Tutorat IA", href: "/fr/ai-tutoring" },
   { label: "Tarifs", href: "/fr/pricing" },
-  { label: "À propos", href: "/fr#about" },
+  { label: "À propos", href: "/fr/about" },
 ];
 
 const language = {
