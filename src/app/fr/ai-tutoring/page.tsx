@@ -1,12 +1,28 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 
+const navLinks = [
+  { label: "Fonctionnalités", href: "/fr#features", hasChevron: true },
+  { label: "Cours", href: "/fr/courses", hasChevron: true },
+  { label: "Tutorat IA", href: "/fr/ai-tutoring" },
+  { label: "Tarifs", href: "/fr/pricing" },
+  { label: "À propos", href: "/fr/about" },
+];
+
+const language = {
+  label: "Langue",
+  options: [
+    { label: "Français", href: "/fr" },
+    { label: "Anglais", href: "/" },
+  ],
+};
+
 export default function AiTutoringPageFr() {
   const homePath = "/fr";
 
   return (
     <div id="top" className="min-h-screen bg-white">
-      <Navbar basePath="/fr" />
+      <Navbar navLinks={navLinks} language={language} basePath="/fr" />
       <main className="mx-auto w-full max-w-6xl px-6 pb-20 pt-16">
         <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>

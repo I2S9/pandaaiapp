@@ -14,6 +14,11 @@ type LanguageOption = {
   href: string;
 };
 
+type CourseItem = {
+  label: string;
+  href: string;
+};
+
 type NavbarProps = {
   navLinks?: NavLink[];
   language?: {
@@ -21,6 +26,7 @@ type NavbarProps = {
     options: LanguageOption[];
   };
   basePath?: string;
+  courseItems?: CourseItem[];
 };
 
 const defaultLanguage = {
@@ -42,13 +48,14 @@ export default function Navbar({
   navLinks,
   language = defaultLanguage,
   basePath = "/",
+  courseItems,
 }: NavbarProps) {
   const basePrefix = basePath === "/" ? "" : basePath;
   const resolvedNavLinks: NavLink[] =
     navLinks ??
     [
       { label: "Features", href: `${basePath}#features`, hasChevron: true },
-      { label: "Courses", href: `${basePath}#courses`, hasChevron: true },
+      { label: "Courses", href: `${basePrefix}/courses`, hasChevron: true },
       { label: "AI Tutoring", href: `${basePrefix}/ai-tutoring` },
       {
         label: "Pricing",
@@ -105,10 +112,31 @@ export default function Navbar({
     notes: "bg-[#FFE4F0]",
   };
 
+  const defaultCourseItems: CourseItem[] =
+    basePath === "/fr"
+      ? [
+          { label: "Mathématiques", href: `${basePrefix}/courses#math` },
+          { label: "Biologie", href: `${basePrefix}/courses#biology` },
+          { label: "Histoire", href: `${basePrefix}/courses#history` },
+          { label: "Économie", href: `${basePrefix}/courses#economics` },
+          { label: "Informatique", href: `${basePrefix}/courses#cs` },
+          { label: "Littérature", href: `${basePrefix}/courses#literature` },
+        ]
+      : [
+          { label: "Mathematics", href: `${basePrefix}/courses#math` },
+          { label: "Biology", href: `${basePrefix}/courses#biology` },
+          { label: "History", href: `${basePrefix}/courses#history` },
+          { label: "Economics", href: `${basePrefix}/courses#economics` },
+          { label: "Computer Science", href: `${basePrefix}/courses#cs` },
+          { label: "Literature", href: `${basePrefix}/courses#literature` },
+        ];
+
+  const resolvedCourseItems = courseItems ?? defaultCourseItems;
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="relative z-30 w-full border-b border-zinc-100 bg-white/90 backdrop-blur">
+    <header className="relative z-50 w-full border-b border-zinc-100 bg-white/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
         <a href={`${basePath}#top`} className="flex items-center gap-0.5">
           <Image
@@ -125,7 +153,7 @@ export default function Navbar({
 
         <nav className="hidden items-center gap-2 text-base font-semibold text-zinc-500 md:flex">
           {resolvedNavLinks.map((link) =>
-            link.hasChevron && link.href.includes("#features") ? (
+            link.hasChevron && link.href.includes("features") ? (
               <div key={link.href} className="group relative">
                 <button
                   type="button"
@@ -148,7 +176,7 @@ export default function Navbar({
                     />
                   </svg>
                 </button>
-                <div className="invisible absolute left-1/2 top-full z-10 mt-2 w-[440px] -translate-x-1/2 rounded-2xl border border-zinc-200 bg-white p-4 text-sm text-zinc-600 shadow-sm opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <div className="invisible absolute left-1/2 top-full z-50 mt-2 w-[440px] -translate-x-1/2 rounded-2xl border border-zinc-200 bg-white p-4 text-sm text-zinc-600 shadow-sm opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                   <div className="grid gap-3 sm:grid-cols-2">
                     {featureItems.map((item) => (
                       <a
@@ -167,6 +195,43 @@ export default function Navbar({
                             {item.description}
                           </span>
                         </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : link.hasChevron && link.href.includes("courses") ? (
+              <div key={link.href} className="group relative">
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-1 rounded-full px-4 py-2 transition hover:bg-zinc-200 hover:text-zinc-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300"
+                  aria-haspopup="true"
+                >
+                  {link.label}
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 12 12"
+                    className="h-3 w-3 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                    fill="none"
+                  >
+                    <path
+                      d="M2.5 4.75 6 8.25l3.5-3.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div className="invisible fixed left-1/2 top-[88px] z-50 mt-2 w-[calc(100vw-420px)] max-w-5xl -translate-x-1/2 rounded-2xl border border-zinc-200 bg-white p-5 text-base text-zinc-600 shadow-sm opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    {resolvedCourseItems.map((item) => (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        className="rounded-xl px-4 py-3 text-base font-semibold text-zinc-900 transition hover:bg-zinc-100"
+                      >
+                        {item.label}
                       </a>
                     ))}
                   </div>

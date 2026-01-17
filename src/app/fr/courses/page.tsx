@@ -17,87 +17,77 @@ const language = {
   ],
 };
 
-export default function AboutPageFr() {
+const subjects = [
+  {
+    id: "math",
+    title: "Mathématiques",
+    description:
+      "Un parcours clair pour progresser avec de la pratique guidée.",
+  },
+  {
+    id: "biology",
+    title: "Biologie",
+    description:
+      "Transformez les chapitres complexes en boucles de rappel efficaces.",
+  },
+  {
+    id: "history",
+    title: "Histoire",
+    description:
+      "Révisez les périodes clés avec un rythme de révision structuré.",
+  },
+  {
+    id: "economics",
+    title: "Économie",
+    description:
+      "Travaillez définitions, graphiques et raisonnements avec des quiz courts.",
+  },
+  {
+    id: "cs",
+    title: "Informatique",
+    description:
+      "Focus sur les algorithmes et concepts clés avec des explications ciblées.",
+  },
+  {
+    id: "literature",
+    title: "Littérature",
+    description:
+      "Analysez thèmes et citations avec des cartes de rappel actives.",
+  },
+];
+
+export default function CoursesPageFr() {
   const homePath = "/fr";
 
   return (
     <div id="top" className="min-h-screen bg-white">
       <Navbar navLinks={navLinks} language={language} basePath="/fr" />
       <main className="mx-auto w-full max-w-6xl px-6 pb-20 pt-16">
-        <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-400">
-              À propos
-            </p>
-            <h1 className="mt-4 text-4xl font-semibold text-zinc-900 sm:text-5xl">
-              Un parcours d'étude calme et structuré à partir de vos contenus.
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-zinc-600">
-              PandaAi transforme vos documents en une boucle de pratique,
-              feedback et révision pour garder un rythme clair. L'approche
-              combine rappel actif, répétition espacée et tutorat pour progresser
-              sans surcharge.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="/fr/pricing"
-                className="rounded-2xl bg-[#DDBDFD] px-6 py-3 text-base font-semibold text-white shadow-[0_6px_0_#A27BD8] transition-all hover:translate-y-0.5 hover:shadow-[0_4px_0_#A27BD8] active:translate-y-1 active:shadow-[0_2px_0_#A27BD8]"
-              >
-                Voir les tarifs
-              </a>
-              <a
-                href={`${homePath}#features`}
-                className="rounded-2xl border border-zinc-200 bg-white px-6 py-3 text-base font-semibold text-zinc-900 shadow-[0_6px_0_#E4E4E7] transition-all hover:translate-y-0.5 hover:shadow-[0_4px_0_#E4E4E7] active:translate-y-1 active:shadow-[0_2px_0_#E4E4E7]"
-              >
-                Découvrir les fonctionnalités
-              </a>
-            </div>
-          </div>
-          <div className="rounded-[28px] border border-zinc-200 bg-zinc-50 p-8">
-            <h2 className="text-2xl font-semibold text-zinc-900">
-              Ce que nous construisons
-            </h2>
-            <ul className="mt-6 space-y-4 text-base text-zinc-600">
-              <li>
-                Des parcours simples à suivre chaque semaine, sans friction.
-              </li>
-              <li>
-                Des retours clairs pour savoir quoi revoir en priorité.
-              </li>
-              <li>
-                Une interface sobre qui favorise la concentration.
-              </li>
-            </ul>
-          </div>
+        <section>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-400">
+            Cours
+          </p>
+          <h1 className="mt-4 text-4xl font-semibold text-zinc-900 sm:text-5xl">
+            Des parcours d'étude adaptés à vos matières.
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600">
+            Choisissez une matière pour voir comment PandaAi organise la
+            pratique, le feedback et la révision.
+          </p>
         </section>
 
-        <section className="mt-16 grid gap-6 md:grid-cols-3">
-          {[
-            {
-              title: "Une base pédagogique solide",
-              body:
-                "Chaque fonctionnalité s'appuie sur des principes éprouvés pour renforcer la mémorisation.",
-            },
-            {
-              title: "Une flexibilité centrée étudiant",
-              body:
-                "Les plans s'adaptent à votre contenu, votre rythme et vos échéances.",
-            },
-            {
-              title: "Une assistance IA mesurée",
-              body:
-                "Les indices guident la réflexion sans donner la réponse directement.",
-            },
-          ].map((item) => (
+        <section className="mt-12 grid gap-6 md:grid-cols-2">
+          {subjects.map((subject) => (
             <div
-              key={item.title}
+              key={subject.id}
+              id={subject.id}
               className="rounded-[24px] border border-zinc-200 bg-white p-6 shadow-sm"
             >
-              <h3 className="text-lg font-semibold text-zinc-900">
-                {item.title}
-              </h3>
+              <h2 className="text-xl font-semibold text-zinc-900">
+                {subject.title}
+              </h2>
               <p className="mt-3 text-base leading-relaxed text-zinc-600">
-                {item.body}
+                {subject.description}
               </p>
             </div>
           ))}
