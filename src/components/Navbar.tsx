@@ -51,6 +51,8 @@ export default function Navbar({
   courseItems,
 }: NavbarProps) {
   const basePrefix = basePath === "/" ? "" : basePath;
+  const loginPath = basePath === "/" ? "/login" : `${basePrefix}/login`;
+  const signupPath = basePath === "/" ? "/pricing" : `${basePrefix}/pricing`;
   const resolvedNavLinks: NavLink[] =
     navLinks ??
     [
@@ -301,13 +303,13 @@ export default function Navbar({
 
         <div className="hidden items-center gap-3 md:flex">
           <a
-            href="#auth"
+            href={loginPath}
             className="rounded-2xl border border-zinc-200 px-5 py-2.5 text-base font-semibold text-zinc-900 shadow-sm transition-transform duration-150 hover:border-zinc-300 active:translate-y-0.5 active:shadow-none"
           >
             Login
           </a>
           <a
-            href="#auth"
+            href={signupPath}
             className="rounded-2xl bg-[#DDBDFD] px-5 py-2.5 text-base font-semibold text-white shadow-sm transition-transform duration-150 active:translate-y-0.5 active:shadow-none"
           >
             Sign Up
@@ -375,14 +377,14 @@ export default function Navbar({
             </div>
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="#auth"
+                href={loginPath}
                 className="rounded-2xl border border-zinc-200 px-5 py-2.5 text-base font-semibold text-zinc-900 shadow-sm transition-transform duration-150 active:translate-y-0.5 active:shadow-none"
                 onClick={() => setIsOpen(false)}
               >
                 Login
               </a>
               <a
-                href="#auth"
+                href={signupPath}
                 className="rounded-2xl bg-[#DDBDFD] px-5 py-2.5 text-base font-semibold text-white shadow-sm transition-transform duration-150 active:translate-y-0.5 active:shadow-none"
                 onClick={() => setIsOpen(false)}
               >
