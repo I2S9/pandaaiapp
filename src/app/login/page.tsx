@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState, type FormEvent } from "react";
+import { useState, type CSSProperties, type FormEvent } from "react";
 
 type AuthProvider = "email" | "google" | "microsoft";
 
@@ -11,6 +11,28 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const reviewCards = [
+    {
+      name: "Karim",
+      detail: "International College",
+      text: "My scores increased across every subject. PandaAi helped me turn messy notes into structured reviews I could repeat each week.",
+    },
+    {
+      name: "Sofia",
+      detail: "Business major",
+      text: "The quizzes feel like real exam practice. I finally know what I should review instead of re-reading everything.",
+    },
+    {
+      name: "Liam",
+      detail: "Medical student",
+      text: "The spaced repetition reminders are spot-on. I can keep up with heavy content without burning out.",
+    },
+    {
+      name: "Aya",
+      detail: "Economics track",
+      text: "Flashcards plus exam mode keep me focused. PandaAi feels like a full study coach in one place.",
+    },
+  ];
 
   const signIn = (payloadEmail: string, provider: AuthProvider) => {
     const trimmedEmail = payloadEmail.trim().toLowerCase();
@@ -47,74 +69,100 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white px-6 py-16">
-      <div className="mx-auto w-full max-w-5xl">
-        <div className="grid overflow-hidden rounded-[32px] border border-zinc-200 bg-white shadow-sm lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="flex flex-col justify-between bg-gradient-to-br from-[#EEF5FF] via-[#F2EDFF] to-[#F7EFFF] p-10">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#7B5AC8]">
-                PandaAi Login
-              </p>
-              <h1 className="mt-5 text-3xl font-semibold text-zinc-900 sm:text-4xl">
-                Learn smarter, stay focused, and finish every study plan.
-              </h1>
-              <p className="mt-4 text-base leading-relaxed text-zinc-600">
-                PandaAi turns your materials into flashcards, quizzes, and exam
-                practice so you can keep momentum without the stress.
-              </p>
-            </div>
-            <div className="mt-10 rounded-[24px] border border-white/60 bg-white/80 p-6 text-sm text-zinc-600">
-              <p className="font-semibold text-zinc-900">
-                Demo session notice
-              </p>
-              <p className="mt-2">
-                This demo stores your email locally on this device so you can
-                continue without a backend sign-in.
+    <main className="min-h-screen bg-white">
+      <div className="flex min-h-screen flex-col lg:flex-row">
+        <section className="flex w-full items-center justify-center border-b border-zinc-200/80 bg-[#F7F8FF] px-6 py-10 lg:w-1/2 lg:border-b-0 lg:border-r lg:px-10">
+          <div className="w-full max-w-xl">
+            <div className="rounded-[36px] border border-[#E8EAF3] bg-gradient-to-br from-[#F5FBFF] via-[#F5F6FF] to-[#F5F0FF] p-8 shadow-sm sm:p-10">
+              <div className="flex flex-col items-center text-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm">
+                  <Image
+                    src="/assets/images/logo.png"
+                    alt="PandaAi logo"
+                    width={36}
+                    height={36}
+                    className="h-9 w-9 object-contain"
+                    quality={100}
+                  />
+                </div>
+              <h1 className="mt-5 text-2xl font-semibold text-[#7B5AC8] sm:text-3xl">
+                  The #1 IB Learning Platform
+                </h1>
+              </div>
+
+              <div className="relative mt-8 h-[280px] overflow-hidden sm:h-[320px]">
+                <div
+                  className="testimonial-track space-y-4"
+                  style={{ "--duration": "24s" } as CSSProperties}
+                >
+                  {[...reviewCards, ...reviewCards].map((review, index) => (
+                    <div
+                      key={`${review.name}-${index}`}
+                      className="rounded-[22px] border border-[#E8EAF3] bg-white p-4 shadow-sm"
+                    >
+                      <p className="text-sm font-semibold text-[#7B5AC8] underline decoration-[#E8D7FF] decoration-2 underline-offset-4">
+                        {review.text}
+                      </p>
+                      <div className="mt-4 flex items-center gap-3">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#DDBDFD] text-sm font-semibold text-zinc-900">
+                          {review.name.slice(0, 1)}
+                        </span>
+                        <div>
+                          <p className="text-sm font-semibold text-zinc-900">
+                            {review.name}
+                          </p>
+                          <p className="text-xs text-zinc-500">
+                            {review.detail}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <p className="mt-6 text-center text-xs text-zinc-500">
+                Trusted by 450,000+ students in 4,000+ schools worldwide
               </p>
             </div>
           </div>
+        </section>
 
-          <div className="flex flex-col justify-center p-10">
-            <a href="/" className="flex items-center gap-2">
+        <section className="flex w-full items-center justify-center px-6 py-10 lg:w-1/2 lg:px-12">
+          <div className="w-full max-w-md">
+            <div className="flex flex-col items-center text-center">
               <Image
                 src="/assets/images/logo.png"
                 alt="PandaAi logo"
-                width={64}
-                height={64}
-                className="h-14 w-14 rounded-2xl object-cover"
+                width={120}
+                height={120}
+                className="h-24 w-24 rounded-[28px] object-cover sm:h-28 sm:w-28"
                 quality={100}
                 priority
               />
-              <span className="text-lg font-semibold text-zinc-900">
-                PandaAi
-              </span>
-            </a>
+              <h2 className="mt-2 text-2xl font-semibold text-zinc-900 sm:text-3xl">
+                Expert-written exam prep,
+                <br />
+                All in One Place.
+              </h2>
+            </div>
 
-            <h2 className="mt-8 text-2xl font-semibold text-zinc-900">
-              Expert-built exam prep, all in one place.
-            </h2>
-            <p className="mt-3 text-base text-zinc-600">
-              Sign in to pick up your study loop and keep improving.
-            </p>
-
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <button
                 type="button"
-                onClick={() =>
-                  handleProviderSignIn("google", "demo@gmail.com")
-                }
-                className="rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-base font-semibold text-zinc-900 shadow-sm transition hover:border-zinc-300"
+                onClick={() => handleProviderSignIn("google", "demo@gmail.com")}
+                className="rounded-2xl border border-zinc-200 bg-white px-4 py-4 text-base font-semibold text-zinc-900 shadow-sm transition hover:border-zinc-300"
               >
-                Continue with Google
+                Google
               </button>
               <button
                 type="button"
                 onClick={() =>
                   handleProviderSignIn("microsoft", "demo@outlook.com")
                 }
-                className="rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-base font-semibold text-zinc-900 shadow-sm transition hover:border-zinc-300"
+                className="rounded-2xl border border-zinc-200 bg-white px-4 py-4 text-base font-semibold text-zinc-900 shadow-sm transition hover:border-zinc-300"
               >
-                Continue with Microsoft
+                Microsoft
               </button>
             </div>
 
@@ -125,7 +173,7 @@ export default function LoginPage() {
             </div>
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-              <label className="block text-sm font-semibold text-zinc-700">
+              <label className="block text-left text-sm font-semibold text-zinc-700">
                 Email
                 <input
                   type="email"
@@ -138,30 +186,25 @@ export default function LoginPage() {
                 />
               </label>
 
-              {error ? (
-                <p className="text-sm text-red-600">{error}</p>
-              ) : null}
+              {error ? <p className="text-sm text-red-600">{error}</p> : null}
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full rounded-2xl bg-[#DDBDFD] px-5 py-3 text-base font-semibold text-white shadow-[0_6px_0_#A27BD8] transition-all hover:translate-y-0.5 hover:shadow-[0_4px_0_#A27BD8] active:translate-y-1 active:shadow-[0_2px_0_#A27BD8] disabled:cursor-not-allowed disabled:opacity-70"
-              >
-                Continue
-              </button>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full rounded-2xl bg-[#DDBDFD] px-5 py-3 text-base font-semibold text-white shadow-[0_6px_0_#A27BD8] transition-all hover:translate-y-0.5 hover:shadow-[0_4px_0_#A27BD8] active:translate-y-1 active:shadow-[0_2px_0_#A27BD8] disabled:cursor-not-allowed disabled:opacity-70"
+            >
+              Continue
+            </button>
             </form>
 
-            <p className="mt-6 text-sm text-zinc-500">
-              New to PandaAi?{" "}
-              <a
-                href="/pricing"
-                className="font-semibold text-[#7B5AC8] transition hover:text-[#6A4AB8]"
-              >
-                View plans
+            <p className="mt-6 text-center text-sm text-[#7B5AC8]">
+              Don&apos;t have an account?{" "}
+              <a href="/pricing" className="font-semibold">
+                Sign up
               </a>
             </p>
           </div>
-        </div>
+        </section>
       </div>
     </main>
   );
