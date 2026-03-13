@@ -14,7 +14,7 @@ export default function PricingPage() {
       <main className="px-6">
         <section className="relative mx-auto w-full max-w-6xl px-6 py-16">
           <div
-            className="pointer-events-none absolute right-6 top-1/2 hidden h-[420px] w-[420px] -translate-y-1/2 bg-contain bg-no-repeat lg:block"
+            className="pointer-events-none absolute right-6 top-1/2 hidden h-[420px] w-[420px] -translate-y-1/2 translate-x-6 bg-contain bg-no-repeat lg:block"
             style={{ backgroundImage: "url(/assets/images/panda-pricing.png)" }}
             aria-hidden="true"
           />
